@@ -15,14 +15,11 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "declaration": true,
-    "declarationMap": true,
     "sourceMap": true,
-    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@tokens/*": ["src/tokens/*"],
-      "@components/*": ["src/components/*"]
+      "@/*": ["./src/*"],
+      "@tokens/*": ["./src/tokens/*"],
+      "@components/*": ["./src/components/*"]
     }
   },
   "include": ["src"],
