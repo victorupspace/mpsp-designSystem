@@ -1,0 +1,154 @@
+/* ==========================================================================
+   MPRS Design System — Input
+   ========================================================================== */
+
+.mprs-input-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--mprs-space-1);
+}
+
+.mprs-input-wrapper--full {
+  width: 100%;
+}
+
+/* ─── Label ─────────────────────────────────────────────────────────────────── */
+
+.mprs-input__label {
+  font-family: var(--mprs-font-family-body);
+  font-size: var(--mprs-font-size-sm);
+  font-weight: var(--mprs-font-weight-medium);
+  color: var(--mprs-color-text-primary);
+  line-height: var(--mprs-line-height-normal);
+}
+
+/* ─── Container ─────────────────────────────────────────────────────────────── */
+
+.mprs-input__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* ─── Field ─────────────────────────────────────────────────────────────────── */
+
+.mprs-input__field {
+  width: 100%;
+  border: 1.5px solid var(--mprs-color-border-default);
+  border-radius: var(--mprs-radius-default);
+  font-family: var(--mprs-font-family-body);
+  color: var(--mprs-color-text-primary);
+  background-color: var(--mprs-color-surface-primary);
+  transition:
+    border-color var(--mprs-transition-fast),
+    box-shadow var(--mprs-transition-fast);
+  outline: none;
+}
+
+.mprs-input__field::placeholder {
+  color: var(--mprs-color-text-tertiary);
+}
+
+.mprs-input__field:hover:not(:disabled) {
+  border-color: var(--mprs-color-border-strong);
+}
+
+.mprs-input__field:focus {
+  border-color: var(--mprs-color-brand-primary);
+  box-shadow: 0 0 0 3px var(--mprs-focus-ring-brand);
+}
+
+/* Sizes */
+.mprs-input__field--sm {
+  padding: var(--mprs-space-1) var(--mprs-space-3);
+  font-size: var(--mprs-font-size-sm);
+  min-height: 32px;
+}
+
+.mprs-input__field--md {
+  padding: var(--mprs-space-2) var(--mprs-space-4);
+  font-size: var(--mprs-font-size-base);
+  min-height: 40px;
+}
+
+.mprs-input__field--lg {
+  padding: var(--mprs-space-3) var(--mprs-space-5);
+  font-size: var(--mprs-font-size-md);
+  min-height: 48px;
+}
+
+/* States */
+.mprs-input__field--error {
+  border-color: var(--mprs-color-feedback-error);
+}
+
+.mprs-input__field--error:focus {
+  border-color: var(--mprs-color-feedback-error);
+  box-shadow: 0 0 0 3px var(--mprs-focus-ring-error);
+}
+
+.mprs-input__field--success {
+  border-color: var(--mprs-color-feedback-success);
+}
+
+.mprs-input__field--success:focus {
+  border-color: var(--mprs-color-feedback-success);
+  box-shadow: 0 0 0 3px var(--mprs-focus-ring-success);
+}
+
+.mprs-input__field--disabled {
+  background-color: var(--mprs-color-neutral-100);
+  color: var(--mprs-color-text-disabled);
+  cursor: not-allowed;
+}
+
+/* Icon padding */
+.mprs-input__field--has-icon-left.mprs-input__field--sm { padding-left: 2rem; }
+.mprs-input__field--has-icon-left.mprs-input__field--md { padding-left: 2.5rem; }
+.mprs-input__field--has-icon-left.mprs-input__field--lg { padding-left: 3rem; }
+
+.mprs-input__field--has-icon-right.mprs-input__field--sm { padding-right: 2rem; }
+.mprs-input__field--has-icon-right.mprs-input__field--md { padding-right: 2.5rem; }
+.mprs-input__field--has-icon-right.mprs-input__field--lg { padding-right: 3rem; }
+
+/* ─── Icons ─────────────────────────────────────────────────────────────────── */
+
+.mprs-input__icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  color: var(--mprs-color-text-tertiary);
+  width: 1.15em;
+  height: 1.15em;
+}
+
+.mprs-input__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.mprs-input__icon--left {
+  left: 0.75rem;
+}
+
+.mprs-input__icon--right {
+  right: 0.75rem;
+}
+
+/* ─── Helper / Error Messages ───────────────────────────────────────────────── */
+
+.mprs-input__message {
+  font-family: var(--mprs-font-family-body);
+  font-size: var(--mprs-font-size-xs);
+  line-height: var(--mprs-line-height-normal);
+}
+
+.mprs-input__message--helper {
+  color: var(--mprs-color-text-tertiary);
+}
+
+.mprs-input__message--error {
+  color: var(--mprs-color-feedback-error);
+}

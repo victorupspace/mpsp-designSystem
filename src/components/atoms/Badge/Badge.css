@@ -1,0 +1,68 @@
+/* ==========================================================================
+   MPRS Design System — Badge
+   ========================================================================== */
+
+.mprs-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--mprs-space-1);
+  border-radius: var(--mprs-radius-full);
+  font-family: var(--mprs-font-family-body);
+  font-weight: var(--mprs-font-weight-medium);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Sizes */
+.mprs-badge--sm {
+  padding: 2px 8px;
+  font-size: var(--mprs-font-size-xs);
+}
+
+.mprs-badge--md {
+  padding: 4px 12px;
+  font-size: var(--mprs-font-size-sm);
+}
+
+/* Variants */
+.mprs-badge--default {
+  background-color: var(--mprs-color-neutral-100);
+  color: var(--mprs-color-text-secondary);
+}
+
+.mprs-badge--brand {
+  background-color: var(--mprs-color-surface-brand-subtle);
+  color: var(--mprs-color-brand-primary-dark);
+}
+
+.mprs-badge--success {
+  background-color: var(--mprs-color-feedback-success-light);
+  color: var(--mprs-color-feedback-success);
+}
+
+.mprs-badge--warning {
+  background-color: var(--mprs-color-feedback-warning-light);
+  color: var(--mprs-color-feedback-warning-text, #7A5200);
+}
+
+.mprs-badge--error {
+  background-color: var(--mprs-color-feedback-error-light);
+  color: var(--mprs-color-feedback-error);
+}
+
+.mprs-badge--info {
+  background-color: var(--mprs-color-feedback-info-light);
+  color: var(--mprs-color-feedback-info);
+}
+
+/* Dot */
+.mprs-badge--dot {
+  padding: 4px 10px;
+}
+
+.mprs-badge__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+}

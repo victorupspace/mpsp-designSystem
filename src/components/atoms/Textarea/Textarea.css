@@ -1,0 +1,95 @@
+/* ==========================================================================
+   MPRS Design System — Textarea
+   ========================================================================== */
+
+.mprs-textarea-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--mprs-space-1);
+}
+
+.mprs-textarea-wrapper--full {
+  width: 100%;
+}
+
+.mprs-textarea__label {
+  font-family: var(--mprs-font-family-body);
+  font-size: var(--mprs-font-size-sm);
+  font-weight: var(--mprs-font-weight-medium);
+  color: var(--mprs-color-text-primary);
+  line-height: var(--mprs-line-height-normal);
+}
+
+.mprs-textarea__field {
+  width: 100%;
+  border: 1.5px solid var(--mprs-color-border-default);
+  border-radius: var(--mprs-radius-default);
+  font-family: var(--mprs-font-family-body);
+  color: var(--mprs-color-text-primary);
+  background-color: var(--mprs-color-surface-primary);
+  transition:
+    border-color var(--mprs-transition-fast),
+    box-shadow var(--mprs-transition-fast);
+  outline: none;
+  min-height: 80px;
+}
+
+.mprs-textarea__field::placeholder {
+  color: var(--mprs-color-text-tertiary);
+}
+
+.mprs-textarea__field:hover:not(:disabled) {
+  border-color: var(--mprs-color-border-strong);
+}
+
+.mprs-textarea__field:focus {
+  border-color: var(--mprs-color-brand-primary);
+  box-shadow: 0 0 0 3px var(--mprs-focus-ring-brand);
+}
+
+/* Sizes */
+.mprs-textarea__field--sm {
+  padding: var(--mprs-space-2) var(--mprs-space-3);
+  font-size: var(--mprs-font-size-sm);
+}
+
+.mprs-textarea__field--md {
+  padding: var(--mprs-space-3) var(--mprs-space-4);
+  font-size: var(--mprs-font-size-base);
+}
+
+.mprs-textarea__field--lg {
+  padding: var(--mprs-space-4) var(--mprs-space-5);
+  font-size: var(--mprs-font-size-md);
+}
+
+/* States */
+.mprs-textarea__field--error {
+  border-color: var(--mprs-color-feedback-error);
+}
+
+.mprs-textarea__field--error:focus {
+  border-color: var(--mprs-color-feedback-error);
+  box-shadow: 0 0 0 3px var(--mprs-focus-ring-error);
+}
+
+.mprs-textarea__field--disabled {
+  background-color: var(--mprs-color-neutral-100);
+  color: var(--mprs-color-text-disabled);
+  cursor: not-allowed;
+}
+
+/* Messages */
+.mprs-textarea__message {
+  font-family: var(--mprs-font-family-body);
+  font-size: var(--mprs-font-size-xs);
+  line-height: var(--mprs-line-height-normal);
+}
+
+.mprs-textarea__message--helper {
+  color: var(--mprs-color-text-tertiary);
+}
+
+.mprs-textarea__message--error {
+  color: var(--mprs-color-feedback-error);
+}

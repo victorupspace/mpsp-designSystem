@@ -1,0 +1,195 @@
+/* ==========================================================================
+   MPRS Design System — Button
+   ========================================================================== */
+
+/* ─── Base ──────────────────────────────────────────────────────────────────── */
+
+.mprs-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--mprs-space-2);
+  border: 2px solid transparent;
+  border-radius: var(--mprs-radius-default);
+  font-family: var(--mprs-font-family-body);
+  font-weight: var(--mprs-font-weight-semibold);
+  line-height: var(--mprs-line-height-tight);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  transition:
+    background-color var(--mprs-transition-fast),
+    border-color var(--mprs-transition-fast),
+    color var(--mprs-transition-fast),
+    box-shadow var(--mprs-transition-fast),
+    transform var(--mprs-transition-fast);
+}
+
+.mprs-btn:focus-visible {
+  outline: 3px solid var(--mprs-color-brand-primary);
+  outline-offset: 2px;
+}
+
+.mprs-btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.mprs-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* ─── Sizes ─────────────────────────────────────────────────────────────────── */
+
+.mprs-btn--sm {
+  padding: var(--mprs-space-1) var(--mprs-space-3);
+  font-size: var(--mprs-font-size-sm);
+  min-height: 32px;
+}
+
+.mprs-btn--md {
+  padding: var(--mprs-space-2) var(--mprs-space-5);
+  font-size: var(--mprs-font-size-base);
+  min-height: 40px;
+}
+
+.mprs-btn--lg {
+  padding: var(--mprs-space-3) var(--mprs-space-6);
+  font-size: var(--mprs-font-size-md);
+  min-height: 48px;
+}
+
+/* ─── Full Width ────────────────────────────────────────────────────────────── */
+
+.mprs-btn--full {
+  width: 100%;
+}
+
+/* ─── Variants ──────────────────────────────────────────────────────────────── */
+
+/* Primary */
+.mprs-btn--primary {
+  background-color: var(--mprs-color-brand-primary);
+  color: var(--mprs-color-text-inverse);
+  border-color: var(--mprs-color-brand-primary);
+}
+
+.mprs-btn--primary:hover:not(:disabled) {
+  background-color: var(--mprs-color-brand-primary-dark);
+  border-color: var(--mprs-color-brand-primary-dark);
+  box-shadow: var(--mprs-shadow-brand);
+}
+
+.mprs-btn--primary:active:not(:disabled) {
+  background-color: var(--mprs-color-brand-primary-deeper);
+}
+
+/* Secondary */
+.mprs-btn--secondary {
+  background-color: var(--mprs-color-surface-brand-subtle);
+  color: var(--mprs-color-brand-primary-dark);
+  border-color: var(--mprs-color-surface-brand-subtle);
+}
+
+.mprs-btn--secondary:hover:not(:disabled) {
+  background-color: var(--mprs-color-surface-brand-hover);
+  border-color: var(--mprs-color-surface-brand-hover);
+}
+
+.mprs-btn--secondary:active:not(:disabled) {
+  background-color: var(--mprs-color-surface-brand-active);
+}
+
+/* Outline */
+.mprs-btn--outline {
+  background-color: transparent;
+  color: var(--mprs-color-brand-primary);
+  border-color: var(--mprs-color-brand-primary);
+}
+
+.mprs-btn--outline:hover:not(:disabled) {
+  background-color: var(--mprs-color-surface-brand-subtle);
+}
+
+.mprs-btn--outline:active:not(:disabled) {
+  background-color: var(--mprs-color-surface-brand-hover);
+}
+
+/* Ghost */
+.mprs-btn--ghost {
+  background-color: transparent;
+  color: var(--mprs-color-text-primary);
+  border-color: transparent;
+}
+
+.mprs-btn--ghost:hover:not(:disabled) {
+  background-color: var(--mprs-color-neutral-100);
+}
+
+.mprs-btn--ghost:active:not(:disabled) {
+  background-color: var(--mprs-color-neutral-200);
+}
+
+/* Danger */
+.mprs-btn--danger {
+  background-color: var(--mprs-color-feedback-error);
+  color: var(--mprs-color-text-inverse);
+  border-color: var(--mprs-color-feedback-error);
+}
+
+.mprs-btn--danger:hover:not(:disabled) {
+  background-color: var(--mprs-color-feedback-error-dark);
+  border-color: var(--mprs-color-feedback-error-dark);
+  box-shadow: 0 4px 14px 0 var(--mprs-focus-ring-error);
+}
+
+.mprs-btn--danger:active:not(:disabled) {
+  background-color: var(--mprs-color-feedback-error-darker);
+}
+
+/* ─── Loading ───────────────────────────────────────────────────────────────── */
+
+.mprs-btn--loading {
+  pointer-events: none;
+}
+
+.mprs-btn__spinner {
+  display: inline-flex;
+  width: 1em;
+  height: 1em;
+  animation: mprs-spin 0.8s linear infinite;
+}
+
+.mprs-btn__spinner svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes mprs-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ─── Icons ─────────────────────────────────────────────────────────────────── */
+
+.mprs-btn__icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 1.15em;
+  height: 1.15em;
+}
+
+.mprs-btn__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ─── Label ─────────────────────────────────────────────────────────────────── */
+
+.mprs-btn__label {
+  display: inline-flex;
+  align-items: center;
+}

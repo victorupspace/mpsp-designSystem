@@ -1,0 +1,124 @@
+/* ==========================================================================
+   MPRS Design System — Select
+   ========================================================================== */
+
+.mprs-select-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--mprs-space-1);
+}
+
+.mprs-select-wrapper--full {
+  width: 100%;
+}
+
+.mprs-select__label {
+  font-family: var(--mprs-font-family-body);
+  font-size: var(--mprs-font-size-sm);
+  font-weight: var(--mprs-font-weight-medium);
+  color: var(--mprs-color-text-primary);
+  line-height: var(--mprs-line-height-normal);
+}
+
+.mprs-select__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.mprs-select__field {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1.5px solid var(--mprs-color-border-default);
+  border-radius: var(--mprs-radius-default);
+  font-family: var(--mprs-font-family-body);
+  color: var(--mprs-color-text-primary);
+  background-color: var(--mprs-color-surface-primary);
+  cursor: pointer;
+  transition:
+    border-color var(--mprs-transition-fast),
+    box-shadow var(--mprs-transition-fast);
+  outline: none;
+  padding-right: 2.5rem;
+}
+
+.mprs-select__field:hover:not(:disabled) {
+  border-color: var(--mprs-color-border-strong);
+}
+
+.mprs-select__field:focus {
+  border-color: var(--mprs-color-brand-primary);
+  box-shadow: 0 0 0 3px var(--mprs-focus-ring-brand);
+}
+
+/* Sizes */
+.mprs-select__field--sm {
+  padding: var(--mprs-space-1) var(--mprs-space-3);
+  padding-right: 2rem;
+  font-size: var(--mprs-font-size-sm);
+  min-height: 32px;
+}
+
+.mprs-select__field--md {
+  padding: var(--mprs-space-2) var(--mprs-space-4);
+  padding-right: 2.5rem;
+  font-size: var(--mprs-font-size-base);
+  min-height: 40px;
+}
+
+.mprs-select__field--lg {
+  padding: var(--mprs-space-3) var(--mprs-space-5);
+  padding-right: 3rem;
+  font-size: var(--mprs-font-size-md);
+  min-height: 48px;
+}
+
+/* States */
+.mprs-select__field--error {
+  border-color: var(--mprs-color-feedback-error);
+}
+
+.mprs-select__field--error:focus {
+  border-color: var(--mprs-color-feedback-error);
+  box-shadow: 0 0 0 3px var(--mprs-focus-ring-error);
+}
+
+.mprs-select__field--disabled {
+  background-color: var(--mprs-color-neutral-100);
+  color: var(--mprs-color-text-disabled);
+  cursor: not-allowed;
+}
+
+/* Chevron */
+.mprs-select__chevron {
+  position: absolute;
+  right: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  color: var(--mprs-color-text-tertiary);
+  width: 1.15em;
+  height: 1.15em;
+}
+
+.mprs-select__chevron svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Messages */
+.mprs-select__message {
+  font-family: var(--mprs-font-family-body);
+  font-size: var(--mprs-font-size-xs);
+  line-height: var(--mprs-line-height-normal);
+}
+
+.mprs-select__message--helper {
+  color: var(--mprs-color-text-tertiary);
+}
+
+.mprs-select__message--error {
+  color: var(--mprs-color-feedback-error);
+}

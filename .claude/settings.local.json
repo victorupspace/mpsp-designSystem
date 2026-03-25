@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find \"/Volumes/My Drive/Work/MPRS/mprs-design-system\" -name \"._*\" -type f -delete)"
+    ]
+  }
+}

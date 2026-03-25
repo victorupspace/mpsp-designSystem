@@ -1,0 +1,164 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Introdução" />
+
+<style>
+  {`
+    .intro-wrapper {
+      max-width: 720px;
+      margin: 0 auto;
+      font-family: var(--mprs-font-family-body, 'Montserrat', sans-serif);
+    }
+    .intro-hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 48px 24px 32px;
+      border-bottom: 2px solid var(--mprs-color-neutral-200, #E5E5E5);
+      margin-bottom: 40px;
+    }
+    .intro-hero img {
+      height: 64px;
+      margin-bottom: 24px;
+    }
+    .intro-hero h1 {
+      font-family: var(--mprs-font-family-heading, 'Bitter', serif);
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--mprs-color-text-primary, #292929);
+      margin: 0 0 8px;
+      letter-spacing: -0.015em;
+    }
+    .intro-hero p {
+      font-size: 1.125rem;
+      color: var(--mprs-color-text-tertiary, #737373);
+      margin: 0;
+    }
+    .intro-badge {
+      display: inline-block;
+      background: var(--mprs-color-surface-brand-subtle, #FFF0E5);
+      color: var(--mprs-color-brand-primary-dark, #FF5D00);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      margin-bottom: 16px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .intro-section h2 {
+      font-family: var(--mprs-font-family-heading, 'Bitter', serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--mprs-color-text-primary, #292929);
+      margin: 0 0 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--mprs-color-brand-primary, #FF7000);
+      display: inline-block;
+    }
+    .intro-section p, .intro-section li {
+      font-size: 1rem;
+      color: var(--mprs-color-text-secondary, #505050);
+      line-height: 1.6;
+    }
+    .intro-section {
+      margin-bottom: 32px;
+    }
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .intro-card {
+      padding: 20px;
+      border-radius: 8px;
+      border: 1.5px solid var(--mprs-color-neutral-200, #E5E5E5);
+      transition: border-color 0.2s;
+    }
+    .intro-card:hover {
+      border-color: var(--mprs-color-brand-primary, #FF7000);
+    }
+    .intro-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--mprs-color-text-primary, #292929);
+      margin: 0 0 4px;
+    }
+    .intro-card p {
+      font-size: 0.875rem;
+      color: var(--mprs-color-text-tertiary, #737373);
+      margin: 0;
+    }
+    .intro-card-icon {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+  `}
+</style>
+
+<div className="intro-wrapper">
+  <div className="intro-hero">
+    <span className="intro-badge">Design System v0.1.0</span>
+    <h1>MPRS Design System</h1>
+    <p>Ministério Público do Rio Grande do Sul</p>
+  </div>
+
+  <div className="intro-section">
+    <h2>Sobre</h2>
+    <p>
+      Este é o Design System oficial do Ministério Público do Rio Grande do Sul.
+      Aqui você encontra todos os componentes, tokens e padrões visuais documentados
+      e prontos para uso em aplicações internas do MPRS.
+    </p>
+  </div>
+
+  <div className="intro-section">
+    <h2>Navegação</h2>
+    <div className="intro-grid">
+      <div className="intro-card">
+        <div className="intro-card-icon">🎨</div>
+        <h3>Fundações / Cores</h3>
+        <p>Paleta de cores, tokens semânticos e guia de uso.</p>
+      </div>
+      <div className="intro-card">
+        <div className="intro-card-icon">✏️</div>
+        <h3>Fundações / Tipografia</h3>
+        <p>Bitter (títulos), Montserrat (corpo) e escala tipográfica.</p>
+      </div>
+      <div className="intro-card">
+        <div className="intro-card-icon">📐</div>
+        <h3>Fundações / Espaçamento</h3>
+        <p>Escala de espaçamento e border radius.</p>
+      </div>
+      <div className="intro-card">
+        <div className="intro-card-icon">🧩</div>
+        <h3>Componentes</h3>
+        <p>Button, Input, Badge e outros componentes.</p>
+      </div>
+    </div>
+  </div>
+
+  <div className="intro-section">
+    <h2>Stack Tecnológica</h2>
+    <ul>
+      <li><strong>React 18</strong> + TypeScript</li>
+      <li><strong>Vite</strong> como bundler</li>
+      <li><strong>Storybook 8</strong> com CSF3 e Autodocs</li>
+      <li><strong>CSS Variables</strong> como Design Tokens — 3 camadas: Core → Primitives → Semantic</li>
+      <li>Arquitetura <strong>Atomic Design</strong></li>
+    </ul>
+  </div>
+
+  <div className="intro-section">
+    <h2>Figma</h2>
+    <p>
+      Este Storybook espelha o arquivo Figma do Design System MPRS.
+      <br/>
+      <a href="https://www.figma.com/design/TfCxXUl4Aqdt5PxhDdiCxE/MPRS---Design-System" target="_blank" rel="noopener" style={{ color: 'var(--mprs-color-brand-primary, #FF7000)', fontWeight: 600 }}>
+        Abrir no Figma →
+      </a>
+    </p>
+  </div>
+</div>
