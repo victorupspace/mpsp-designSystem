@@ -8,7 +8,7 @@ const ShadowSample: React.FC<{ name: string; value: string }> = ({ name, value }
       style={{
         width: 120,
         height: 80,
-        borderRadius: 8,
+        borderRadius: 0,
         backgroundColor: 'var(--mprs-color-surface-primary, #FFFFFF)',
         boxShadow: value,
         border: value === 'none' ? '1px dashed #D4D4D4' : 'none',

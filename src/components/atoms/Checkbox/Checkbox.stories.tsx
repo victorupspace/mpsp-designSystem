@@ -2,18 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import { Checkbox } from './Checkbox';
 
-/**
- * # Checkbox
- *
- * Componente de checkbox do Design System MPRS.
- *
- * ## Uso
- * ```tsx
- * import { Checkbox } from '@mprs/design-system';
- *
- * <Checkbox label="Aceito os termos de uso" />
- * ```
- */
 const meta: Meta<typeof Checkbox> = {
   title: 'Componentes/Atoms/Checkbox',
   component: Checkbox,

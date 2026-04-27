@@ -6,32 +6,16 @@ export type InputSize = 'sm' | 'md' | 'lg';
 export type InputState = 'default' | 'error' | 'success';
 
 export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
-  /** Label do campo */
   label?: string;
-  /** Texto de ajuda abaixo do campo */
   helperText?: string;
-  /** Mensagem de erro (ativa estado de erro automaticamente) */
   errorMessage?: string;
-  /** Tamanho do input */
   size?: InputSize;
-  /** Estado visual */
   state?: InputState;
-  /** Ícone ou elemento à esquerda */
   iconLeft?: ReactNode;
-  /** Ícone ou elemento à direita */
   iconRight?: ReactNode;
-  /** Largura total */
   fullWidth?: boolean;
 }
 
-/**
- * Campo de entrada de texto do Design System MPRS.
- *
- * ```tsx
- * <Input label="Nome completo" placeholder="Digite seu nome" />
- * <Input label="CPF" errorMessage="CPF inválido" />
- * ```
- */
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   (
     {

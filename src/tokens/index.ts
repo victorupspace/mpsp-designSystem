@@ -1,28 +1,3 @@
-/**
- * ============================================================================
- * MPRS Design System — Design Tokens
- * Ministério Público do Rio Grande do Sul
- * ============================================================================
- *
- * Arquitetura em 3 camadas (conforme variáveis exportadas do Figma):
- *
- *   Layer 1 — Core       : Escala bruta, sem significado semântico.
- *                          Fonte: Global: Core (Mode 1.tokens.json)
- *
- *   Layer 2 — Primitives : Paleta da marca e utilitários de cor.
- *                          Fonte: T1: MPRS - Primitives (Mode 1.tokens 2.json)
- *
- *   Layer 3 — Semantic   : Tokens contextuais que referenciam primitivos.
- *                          Fonte: MPRS (MPRS.tokens.json)
- *
- * ⚠️  Não edite os valores aqui diretamente — sincronize a partir do Figma:
- *     https://www.figma.com/design/TfCxXUl4Aqdt5PxhDdiCxE/MPRS---Design-System
- * ============================================================================
- */
-
-// ─── Layer 1: Core ───────────────────────────────────────────────────────────
-
-/** Escala de cinzas neutros (Global: Core). */
 export const coreNeutral = {
   pureBlack: '#000000',
   softBlack: '#292929',
@@ -39,37 +14,34 @@ export const coreNeutral = {
   gray900:   '#262626',
 } as const;
 
-/** Escala de espaçamento em px (Global: Core). Convertida para rem nos CSS variables. */
 export const coreSpacing = {
   0:   '0',
-  2:   '0.125rem',  // 2px
-  4:   '0.25rem',   // 4px
-  6:   '0.375rem',  // 6px
-  8:   '0.5rem',    // 8px
-  10:  '0.625rem',  // 10px
-  12:  '0.75rem',   // 12px
-  16:  '1rem',      // 16px
-  20:  '1.25rem',   // 20px
-  24:  '1.5rem',    // 24px
-  32:  '2rem',      // 32px
-  40:  '2.5rem',    // 40px
-  48:  '3rem',      // 48px
-  64:  '4rem',      // 64px
-  80:  '5rem',      // 80px
-  96:  '6rem',      // 96px
-  128: '8rem',      // 128px
+  2:   '0.125rem',
+  4:   '0.25rem',
+  6:   '0.375rem',
+  8:   '0.5rem',
+  10:  '0.625rem',
+  12:  '0.75rem',
+  16:  '1rem',
+  20:  '1.25rem',
+  24:  '1.5rem',
+  32:  '2rem',
+  40:  '2.5rem',
+  48:  '3rem',
+  64:  '4rem',
+  80:  '5rem',
+  96:  '6rem',
+  128: '8rem',
 } as const;
 
-/** Border radius (Global: Core). */
 export const coreBorderRadius = {
   none: '0',
-  sm:   '0.25rem',  // 4px
-  md:   '0.5rem',   // 8px
-  lg:   '1rem',     // 16px
-  full: '9999px',
+  sm:   '0',
+  md:   '0',
+  lg:   '0',
+  full: '0',
 } as const;
 
-/** Espessura de bordas (Global: Core). */
 export const coreBorderWidth = {
   none: '0',
   sm:   '1px',
@@ -77,7 +49,6 @@ export const coreBorderWidth = {
   lg:   '4px',
 } as const;
 
-/** Breakpoints (Global: Core). */
 export const coreBreakpoints = {
   xs: '0px',
   sm: '640px',
@@ -85,58 +56,44 @@ export const coreBreakpoints = {
   lg: '1200px',
 } as const;
 
-// ─── Layer 2: Primitives ─────────────────────────────────────────────────────
-
-/** Paleta da marca MPRS — escala de laranja/âmbar. */
 export const primitiveBrand = {
   black: '#000000',
   100:   '#FFBD00',
   200:   '#FFAA00',
   300:   '#FF9700',
   400:   '#FF8300',
-  500:   '#FF7000',   // Laranja primário
-  600:   '#FF5D00',   // Laranja escuro (hover/active)
+  500:   '#FF7000',
+  600:   '#FF5D00',
 } as const;
 
-/** Utilitário — Sucesso (verde). */
 export const primitiveSuccess = {
   100: '#E2F7DF',
   200: '#B4D3BD',
-  300: '#089446',    // Cor padrão
-  400: '#036A30',    // Hover/active
+  300: '#089446',
+  400: '#036A30',
 } as const;
 
-/** Utilitário — Alerta (amarelo). */
 export const primitiveWarning = {
   100: '#FFF6C7',
   200: '#FBC06C',
-  300: '#F6B603',    // Cor padrão
-  400: '#DA9C0A',    // Hover/active
+  300: '#F6B603',
+  400: '#DA9C0A',
 } as const;
 
-/** Utilitário — Perigo/Erro (vermelho). */
 export const primitiveDanger = {
   100: '#FFE7E7',
   200: '#F18282',
-  300: '#E0260C',    // Cor padrão
-  400: '#AD2626',    // Hover/active
+  300: '#E0260C',
+  400: '#AD2626',
 } as const;
 
-/** Utilitário — Informação (azul). */
 export const primitiveInfo = {
   100: '#E5F1FF',
   200: '#ACD9FF',
-  300: '#0651A4',    // Cor padrão
-  400: '#202F52',    // Hover/active
+  300: '#0651A4',
+  400: '#202F52',
 } as const;
 
-/**
- * Famílias tipográficas (T1: MPRS - Primitives).
- * - Bitter     → display, headline, title (serifada institucional)
- * - Montserrat → body, label (sans-serif principal)
- * - Karla      → alternativa sans-serif
- * - Syne       → alternativa display
- */
 export const primitiveFontFamily = {
   montserrat: 'Montserrat',
   bitter:     'Bitter',
@@ -144,116 +101,99 @@ export const primitiveFontFamily = {
   syne:       'Syne',
 } as const;
 
-// ─── Layer 3: Semantic ────────────────────────────────────────────────────────
-
-/**
- * Cores semânticas de fundo (MPRS.tokens.json → color.background).
- * Cada categoria expõe: default, defaultHover, subtle, subtleHover.
- */
 export const semanticBackground = {
   neutral: {
-    default:     coreNeutral.gray100,        // #F5F5F5
-    defaultHover: coreNeutral.gray200,       // #E5E5E5
+    default:      coreNeutral.gray100,
+    defaultHover: coreNeutral.gray200,
   },
   brand: {
-    default:     primitiveBrand[500],        // #FF7000
-    defaultHover: primitiveBrand[600],       // #FF5D00
-    subtle:      '#FFF0E5',                  // laranja muito claro
-    subtleHover: '#FFE0CC',
-    disabled:    coreNeutral.gray500,        // #737373
+    default:      primitiveBrand[500],
+    defaultHover: primitiveBrand[600],
+    subtle:       '#FFF0E5',
+    subtleHover:  '#FFE0CC',
+    disabled:     coreNeutral.gray500,
   },
   danger: {
-    default:     primitiveDanger[300],       // #E0260C
-    defaultHover: primitiveDanger[400],      // #AD2626
-    subtle:      primitiveDanger[100],       // #FFE7E7
-    subtleHover: primitiveDanger[200],       // #F18282
+    default:      primitiveDanger[300],
+    defaultHover: primitiveDanger[400],
+    subtle:       primitiveDanger[100],
+    subtleHover:  primitiveDanger[200],
   },
   success: {
-    default:     primitiveSuccess[300],      // #089446
-    defaultHover: primitiveSuccess[400],     // #036A30
-    subtle:      primitiveSuccess[100],      // #E2F7DF
-    subtleHover: primitiveSuccess[200],      // #B4D3BD
+    default:      primitiveSuccess[300],
+    defaultHover: primitiveSuccess[400],
+    subtle:       primitiveSuccess[100],
+    subtleHover:  primitiveSuccess[200],
   },
   warning: {
-    default:     primitiveWarning[300],      // #F6B603
-    defaultHover: primitiveWarning[400],     // #DA9C0A
-    subtle:      primitiveWarning[100],      // #FFF6C7
-    subtleHover: primitiveWarning[200],      // #FBC06C
+    default:      primitiveWarning[300],
+    defaultHover: primitiveWarning[400],
+    subtle:       primitiveWarning[100],
+    subtleHover:  primitiveWarning[200],
   },
   info: {
-    default:     primitiveInfo[300],         // #0651A4
-    defaultHover: primitiveInfo[400],        // #202F52
-    subtle:      primitiveInfo[100],         // #E5F1FF
-    subtleHover: primitiveInfo[200],         // #ACD9FF
+    default:      primitiveInfo[300],
+    defaultHover: primitiveInfo[400],
+    subtle:       primitiveInfo[100],
+    subtleHover:  primitiveInfo[200],
   },
 } as const;
 
-/**
- * Cores semânticas de borda (MPRS.tokens.json → color.border).
- */
 export const semanticBorder = {
   neutral: {
-    default:     coreNeutral.gray100,        // #F5F5F5
-    defaultHover: coreNeutral.gray200,       // #E5E5E5
-    prominent:   coreNeutral.gray600,        // #505050
-    disabled:    coreNeutral.gray400,        // #A3A3A3
+    default:      coreNeutral.gray100,
+    defaultHover: coreNeutral.gray200,
+    prominent:    coreNeutral.gray600,
+    disabled:     coreNeutral.gray400,
   },
   brand: {
-    default:     primitiveBrand[500],        // #FF7000
-    defaultHover: primitiveBrand[600],       // #FF5D00
-    prominent:   primitiveBrand.black,       // #000000
-    disabled:    coreNeutral.gray500,        // #737373
+    default:      primitiveBrand[500],
+    defaultHover: primitiveBrand[600],
+    prominent:    primitiveBrand.black,
+    disabled:     coreNeutral.gray500,
   },
   danger: {
-    default:     primitiveDanger[300],
+    default:      primitiveDanger[300],
     defaultHover: primitiveDanger[400],
-    subtle:      primitiveDanger[100],
-    subtleHover: primitiveDanger[200],
+    subtle:       primitiveDanger[100],
+    subtleHover:  primitiveDanger[200],
   },
   success: {
-    default:     primitiveSuccess[300],
+    default:      primitiveSuccess[300],
     defaultHover: primitiveSuccess[400],
-    subtle:      primitiveSuccess[100],
-    subtleHover: primitiveSuccess[200],
+    subtle:       primitiveSuccess[100],
+    subtleHover:  primitiveSuccess[200],
   },
   warning: {
-    default:     primitiveWarning[300],
+    default:      primitiveWarning[300],
     defaultHover: primitiveWarning[400],
-    subtle:      primitiveWarning[100],
-    subtleHover: primitiveWarning[200],
+    subtle:       primitiveWarning[100],
+    subtleHover:  primitiveWarning[200],
   },
   info: {
-    default:     primitiveInfo[300],
+    default:      primitiveInfo[300],
     defaultHover: primitiveInfo[400],
-    subtle:      primitiveInfo[100],
-    subtleHover: primitiveInfo[200],
+    subtle:       primitiveInfo[100],
+    subtleHover:  primitiveInfo[200],
   },
 } as const;
 
-/**
- * Estilos de texto semânticos (MPRS.tokens.json → text style).
- * Mapeamento de papéis → família tipográfica.
- */
 export const textStyle = {
-  display:  primitiveFontFamily.bitter,      // Títulos de exibição
-  headline: primitiveFontFamily.bitter,      // Cabeçalhos
-  title:    primitiveFontFamily.bitter,      // Títulos de seção
-  label:    primitiveFontFamily.montserrat,  // Labels de formulário e UI
-  body:     primitiveFontFamily.montserrat,  // Texto corrido
+  display:  primitiveFontFamily.bitter,
+  headline: primitiveFontFamily.bitter,
+  title:    primitiveFontFamily.bitter,
+  label:    primitiveFontFamily.montserrat,
+  body:     primitiveFontFamily.montserrat,
 } as const;
 
-// ─── Exports de compatibilidade ───────────────────────────────────────────────
-// Mantêm a API pública original consumida pelos componentes e doc stories.
-
-/** @deprecated Prefira `semanticBackground` e `semanticBorder`. */
 export const colors = {
   brand: {
-    primary:       primitiveBrand[500],      // #FF7000
-    primaryLight:  primitiveBrand[400],      // #FF8300
-    primaryDark:   primitiveBrand[600],      // #FF5D00
-    secondary:     primitiveBrand[200],      // #FFAA00
-    secondaryLight: primitiveBrand[100],     // #FFBD00
-    secondaryDark:  primitiveBrand[300],     // #FF9700
+    primary:        primitiveBrand[500],
+    primaryLight:   primitiveBrand[400],
+    primaryDark:    primitiveBrand[600],
+    secondary:      primitiveBrand[200],
+    secondaryLight: primitiveBrand[100],
+    secondaryDark:  primitiveBrand[300],
     gradient: `linear-gradient(180deg, ${primitiveBrand[500]} 0%, ${primitiveBrand[300]} 100%)`,
   },
   neutral: {
@@ -271,10 +211,10 @@ export const colors = {
     black:   coreNeutral.softBlack,
   },
   text: {
-    primary:  coreNeutral.softBlack,         // #292929
-    secondary: coreNeutral.gray600,          // #505050
-    tertiary:  coreNeutral.gray500,          // #737373
-    disabled:  coreNeutral.gray400,          // #A3A3A3
+    primary:   coreNeutral.softBlack,
+    secondary: coreNeutral.gray600,
+    tertiary:  coreNeutral.gray500,
+    disabled:  coreNeutral.gray400,
     inverse:   coreNeutral.white,
     link:      primitiveBrand[500],
     linkHover: primitiveBrand[600],
@@ -289,11 +229,11 @@ export const colors = {
     brandSubtle: semanticBackground.brand.subtle,
   },
   border: {
-    default:  coreNeutral.gray200,
-    strong:   coreNeutral.gray300,
-    focus:    primitiveBrand[500],
-    error:    primitiveDanger[300],
-    success:  primitiveSuccess[300],
+    default: coreNeutral.gray200,
+    strong:  coreNeutral.gray300,
+    focus:   primitiveBrand[500],
+    error:   primitiveDanger[300],
+    success: primitiveSuccess[300],
   },
   feedback: {
     success:      primitiveSuccess[300],
@@ -333,20 +273,20 @@ export const typography = {
     mono:     "'JetBrains Mono', 'Fira Code', 'Consolas', monospace",
   },
   fontSize: {
-    xs:   '0.625rem',  // 10px
-    sm:   '0.75rem',   // 12px
-    base: '0.875rem',  // 14px
-    md:   '1rem',      // 16px
-    lg:   '1.125rem',  // 18px
-    xl:   '1.25rem',   // 20px
-    '2xl': '1.375rem', // 22px
-    '3xl': '1.5rem',   // 24px
-    '4xl': '1.75rem',  // 28px
-    '5xl': '2rem',     // 32px
-    '6xl': '2.25rem',  // 36px
-    '7xl': '2.5rem',   // 40px
-    '8xl': '3rem',     // 48px
-    '9xl': '4rem',     // 64px
+    xs:    '0.625rem',
+    sm:    '0.75rem',
+    base:  '0.875rem',
+    md:    '1rem',
+    lg:    '1.125rem',
+    xl:    '1.25rem',
+    '2xl': '1.375rem',
+    '3xl': '1.5rem',
+    '4xl': '1.75rem',
+    '5xl': '2rem',
+    '6xl': '2.25rem',
+    '7xl': '2.5rem',
+    '8xl': '3rem',
+    '9xl': '4rem',
   },
   fontWeight: {
     light:     300,
@@ -409,14 +349,10 @@ export const zIndex = {
   tooltip:  1700,
 } as const;
 
-// ─── Export composto ──────────────────────────────────────────────────────────
-
 const tokens = {
-  // Layers
   core: { neutral: coreNeutral, spacing: coreSpacing, radii: coreBorderRadius, borderWidth: coreBorderWidth, breakpoints: coreBreakpoints },
   primitive: { brand: primitiveBrand, success: primitiveSuccess, warning: primitiveWarning, danger: primitiveDanger, info: primitiveInfo, fontFamily: primitiveFontFamily },
   semantic: { background: semanticBackground, border: semanticBorder, textStyle },
-  // Compat
   colors,
   typography,
   spacing,

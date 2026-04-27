@@ -103,7 +103,6 @@ const TypographyPage: React.FC = () => (
       <code>--mprs-font-*</code>) e tokens TypeScript.
     </p>
 
-    {/* Font Families */}
     <h2 style={{ fontSize: 20, fontWeight: 700, color: '#1A2332', marginBottom: 16 }}>
       Famílias Tipográficas
     </h2>
@@ -113,7 +112,7 @@ const TypographyPage: React.FC = () => (
           key={key}
           style={{
             padding: 16,
-            borderRadius: 8,
+            borderRadius: 0,
             border: '1px solid #E5E5E5',
             display: 'flex',
             alignItems: 'center',
@@ -139,7 +138,6 @@ const TypographyPage: React.FC = () => (
       ))}
     </div>
 
-    {/* Font Sizes */}
     <h2 style={{ fontSize: 20, fontWeight: 700, color: '#1A2332', marginBottom: 16 }}>
       Escala de Tamanho
     </h2>
@@ -149,7 +147,6 @@ const TypographyPage: React.FC = () => (
       ))}
     </div>
 
-    {/* Font Weights */}
     <h2 style={{ fontSize: 20, fontWeight: 700, color: '#1A2332', marginBottom: 16 }}>Pesos</h2>
     <div style={{ marginBottom: 40 }}>
       {Object.entries(typography.fontWeight).map(([key, val]) => (

@@ -37,7 +37,7 @@ const SpacingBar: React.FC<{ name: string; value: string }> = ({ name, value }) 
       style={{
         width: value,
         height: 24,
-        borderRadius: 4,
+        borderRadius: 0,
         background: 'linear-gradient(135deg, #E8891C 0%, #D4A023 100%)',
         minWidth: value === '0' ? 2 : undefined,
         opacity: value === '0' ? 0.3 : 1,

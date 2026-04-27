@@ -2,8 +2,6 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { colors } from '../tokens';
 
-/* ─── Color Swatch Component ─────────────────────────────────────────────── */
-
 const ColorSwatch: React.FC<{ name: string; value: string; dark?: boolean }> = ({
   name,
   value,
@@ -14,7 +12,7 @@ const ColorSwatch: React.FC<{ name: string; value: string; dark?: boolean }> = (
       style={{
         width: '100%',
         height: 72,
-        borderRadius: 8,
+        borderRadius: 0,
         backgroundColor: value,
         border: '1px solid rgba(0,0,0,0.08)',
         marginBottom: 8,
@@ -75,8 +73,6 @@ const ColorGroup: React.FC<{ title: string; colors: Record<string, string> }> = 
   </div>
 );
 
-/* ─── Page ──────────────────────────────────────────────────────────────────── */
-
 const ColorsPage: React.FC = () => (
   <div style={{ maxWidth: 900, margin: '0 auto', padding: 24 }}>
     <h1
@@ -111,8 +107,6 @@ const ColorsPage: React.FC = () => (
     <ColorGroup title="Feedback" colors={colors.feedback} />
   </div>
 );
-
-/* ─── Story Meta ────────────────────────────────────────────────────────────── */
 
 const meta: Meta = {
   title: 'Fundações/Cores',

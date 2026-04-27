@@ -2,41 +2,19 @@ import React from 'react';
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
 import './Button.css';
 
-/* ─── Types ─────────────────────────────────────────────────────────────────── */
-
 export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger';
 export type ButtonSize = 'sm' | 'md' | 'lg';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  /** Conteúdo do botão */
   children: ReactNode;
-  /** Variante visual do botão */
   variant?: ButtonVariant;
-  /** Tamanho do botão */
   size?: ButtonSize;
-  /** Largura total do container */
   fullWidth?: boolean;
-  /** Estado de carregamento */
   loading?: boolean;
-  /** Ícone à esquerda do label */
   iconLeft?: ReactNode;
-  /** Ícone à direita do label */
   iconRight?: ReactNode;
 }
 
-/* ─── Component ─────────────────────────────────────────────────────────────── */
-
-/**
- * Botão principal do Design System MPRS.
- *
- * Suporta 5 variantes visuais, 3 tamanhos, ícones e estado de loading.
- *
- * ```tsx
- * <Button variant="primary" size="md" onClick={handleClick}>
- *   Confirmar
- * </Button>
- * ```
- */
 export const Button: React.FC<ButtonProps> = ({
   children,
   variant = 'primary',

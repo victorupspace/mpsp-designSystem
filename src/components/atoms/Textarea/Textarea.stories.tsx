@@ -2,18 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import { Textarea } from './Textarea';
 
-/**
- * # Textarea
- *
- * Campo de texto multilinha do Design System MPRS.
- *
- * ## Uso
- * ```tsx
- * import { Textarea } from '@mprs/design-system';
- *
- * <Textarea label="Observações" placeholder="Descreva..." rows={4} />
- * ```
- */
 const meta: Meta<typeof Textarea> = {
   title: 'Componentes/Atoms/Textarea',
   component: Textarea,

@@ -13,22 +13,6 @@ const comarcas = [
   { label: 'Passo Fundo', value: 'passo-fundo' },
 ];
 
-/**
- * # Select
- *
- * Componente de seleção (dropdown) do Design System MPRS.
- *
- * ## Uso
- * ```tsx
- * import { Select } from '@mprs/design-system';
- *
- * <Select
- *   label="Comarca"
- *   placeholder="Selecione..."
- *   options={comarcas}
- * />
- * ```
- */
 const meta: Meta<typeof Select> = {
   title: 'Componentes/Atoms/Select',
   component: Select,

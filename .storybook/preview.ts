@@ -2,28 +2,12 @@ import type { Preview } from '@storybook/react';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import { mprsThemeLight, mprsThemeDark } from './mprs-theme';
 
-// Importa os tokens como CSS Variables globais
 import '../src/styles/globals.css';
-
-/**
- * ============================================================================
- * Storybook Preview — Configuração global dos componentes
- * ============================================================================
- *
- * - Injeta CSS variables (Design Tokens) em todos os stories
- * - Configura o seletor Light/Dark mode na toolbar
- * - Define decorators globais
- * - Configura parâmetros de documentação (autodocs)
- *
- * ============================================================================
- */
 
 const preview: Preview = {
   parameters: {
-    // ─── Layout padrão ─────────────────────────────────────────────────────
     layout: 'centered',
 
-    // ─── Controles automáticos ─────────────────────────────────────────────
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -33,7 +17,6 @@ const preview: Preview = {
       sort: 'requiredFirst',
     },
 
-    // ─── Documentação ──────────────────────────────────────────────────────
     docs: {
       theme: mprsThemeLight,
       toc: {
@@ -43,7 +26,6 @@ const preview: Preview = {
       },
     },
 
-    // ─── Backgrounds (Canvas do preview de componentes) ────────────────────
     backgrounds: {
       default: 'Claro',
       values: [
@@ -54,7 +36,6 @@ const preview: Preview = {
       ],
     },
 
-    // ─── Viewport (responsividade) ─────────────────────────────────────────
     viewport: {
       viewports: {
         mobile: {
@@ -76,7 +57,6 @@ const preview: Preview = {
       },
     },
 
-    // ─── Opções ────────────────────────────────────────────────────────────
     options: {
       storySort: {
         order: [
@@ -91,9 +71,7 @@ const preview: Preview = {
     },
   },
 
-  // ─── Decorators globais ────────────────────────────────────────────────────
   decorators: [
-    // Seletor Light / Dark Mode via data-attribute
     withThemeByDataAttribute({
       themes: {
         Claro: 'light',
@@ -104,7 +82,6 @@ const preview: Preview = {
     }),
   ],
 
-  // ─── Tags globais ──────────────────────────────────────────────────────────
   tags: ['autodocs'],
 };
 

@@ -1,19 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Badge } from './Badge';
 
-/**
- * # Badge
- *
- * Componente de badge/tag para indicar status, categorias ou contadores.
- *
- * ## Uso
- * ```tsx
- * import { Badge } from '@mprs/design-system';
- *
- * <Badge variant="success">Ativo</Badge>
- * <Badge variant="error" dot />
- * ```
- */
 const meta: Meta<typeof Badge> = {
   title: 'Componentes/Atoms/Badge',
   component: Badge,

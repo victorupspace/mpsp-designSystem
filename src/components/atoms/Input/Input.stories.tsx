@@ -2,25 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import { Input } from './Input';
 
-/**
- * # Input
- *
- * Campo de entrada de texto do Design System MPRS.
- *
- * Suporta label, helper text, mensagens de erro, ícones e 3 tamanhos.
- *
- * ## Uso
- * ```tsx
- * import { Input } from '@mprs/design-system';
- *
- * <Input label="Nome" placeholder="Digite seu nome completo" />
- * ```
- *
- * ## Acessibilidade
- * - Labels conectadas via `htmlFor` / `id`
- * - `aria-invalid` para estado de erro
- * - `aria-describedby` para mensagens de ajuda/erro
- */
 const meta: Meta<typeof Input> = {
   title: 'Componentes/Atoms/Input',
   component: Input,
@@ -56,7 +37,6 @@ const meta: Meta<typeof Input> = {
 export default meta;
 type Story = StoryObj<typeof Input>;
 
-/** Campo padrão com label. */
 export const Default: Story = {
   args: {
     label: 'Nome completo',
@@ -64,7 +44,6 @@ export const Default: Story = {
   },
 };
 
-/** Com texto de ajuda. */
 export const WithHelperText: Story = {
   args: {
     label: 'E-mail institucional',
@@ -73,7 +52,6 @@ export const WithHelperText: Story = {
   },
 };
 
-/** Com mensagem de erro. */
 export const WithError: Story = {
   args: {
     label: 'CPF',
@@ -83,7 +61,6 @@ export const WithError: Story = {
   },
 };
 
-/** Estado de sucesso. */
 export const Success: Story = {
   args: {
     label: 'E-mail',
@@ -94,7 +71,6 @@ export const Success: Story = {
   },
 };
 
-/** Tamanho pequeno. */
 export const Small: Story = {
   args: {
     label: 'Buscar',
@@ -103,7 +79,6 @@ export const Small: Story = {
   },
 };
 
-/** Tamanho grande. */
 export const Large: Story = {
   args: {
     label: 'Assunto',
@@ -112,7 +87,6 @@ export const Large: Story = {
   },
 };
 
-/** Desabilitado. */
 export const Disabled: Story = {
   args: {
     label: 'Campo protegido',
@@ -131,7 +105,6 @@ const SearchIcon = () => (
   </svg>
 );
 
-/** Com ícone à esquerda. */
 export const WithIcon: Story = {
   args: {
     label: 'Pesquisar processos',
@@ -140,7 +113,6 @@ export const WithIcon: Story = {
   },
 };
 
-/** Largura total. */
 export const FullWidth: Story = {
   args: {
     label: 'Observações',
@@ -153,7 +125,6 @@ export const FullWidth: Story = {
   },
 };
 
-/** Exibe todos os estados lado a lado. */
 export const AllStates: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>

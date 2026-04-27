@@ -2,30 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import { Button } from './Button';
 
-/**
- * # Button
- *
- * Componente de botão principal do Design System MPRS.
- *
- * Utilizado para ações primárias e secundárias em toda a interface.
- * Suporta 5 **variantes** visuais, 3 **tamanhos**, **ícones** e estado de **loading**.
- *
- * ## Uso
- *
- * ```tsx
- * import { Button } from '@mprs/design-system';
- *
- * <Button variant="primary" size="md" onClick={handleClick}>
- *   Confirmar ação
- * </Button>
- * ```
- *
- * ## Acessibilidade
- *
- * - Foco visível com `outline` de 3px na cor da marca.
- * - Estado `aria-busy` quando em loading.
- * - Botão desabilitado impede clique e reduz opacidade.
- */
 const meta: Meta<typeof Button> = {
   title: 'Componentes/Atoms/Button',
   component: Button,
@@ -97,9 +73,6 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-/* ─── Stories: Variantes ─────────────────────────────────────────────────────── */
-
-/** Variante primária — ação principal da página. */
 export const Primary: Story = {
   args: {
     variant: 'primary',
@@ -107,7 +80,6 @@ export const Primary: Story = {
   },
 };
 
-/** Variante secundária — ação complementar. */
 export const Secondary: Story = {
   args: {
     variant: 'secondary',
@@ -115,7 +87,6 @@ export const Secondary: Story = {
   },
 };
 
-/** Variante outline — contorno apenas. */
 export const Outline: Story = {
   args: {
     variant: 'outline',
@@ -123,7 +94,6 @@ export const Outline: Story = {
   },
 };
 
-/** Variante ghost — sem fundo, aparência sutil. */
 export const Ghost: Story = {
   args: {
     variant: 'ghost',
@@ -131,7 +101,6 @@ export const Ghost: Story = {
   },
 };
 
-/** Variante de perigo — ações destrutivas. */
 export const Danger: Story = {
   args: {
     variant: 'danger',
@@ -139,9 +108,6 @@ export const Danger: Story = {
   },
 };
 
-/* ─── Stories: Tamanhos ──────────────────────────────────────────────────────── */
-
-/** Tamanho pequeno (sm). */
 export const Small: Story = {
   args: {
     size: 'sm',
@@ -149,7 +115,6 @@ export const Small: Story = {
   },
 };
 
-/** Tamanho médio (md) — padrão. */
 export const Medium: Story = {
   args: {
     size: 'md',
@@ -157,7 +122,6 @@ export const Medium: Story = {
   },
 };
 
-/** Tamanho grande (lg). */
 export const Large: Story = {
   args: {
     size: 'lg',
@@ -165,9 +129,6 @@ export const Large: Story = {
   },
 };
 
-/* ─── Stories: Estados ───────────────────────────────────────────────────────── */
-
-/** Estado de carregamento com spinner. */
 export const Loading: Story = {
   args: {
     loading: true,
@@ -175,7 +136,6 @@ export const Loading: Story = {
   },
 };
 
-/** Estado desabilitado. */
 export const Disabled: Story = {
   args: {
     disabled: true,
@@ -183,7 +143,6 @@ export const Disabled: Story = {
   },
 };
 
-/** Largura total do container. */
 export const FullWidth: Story = {
   args: {
     fullWidth: true,
@@ -193,8 +152,6 @@ export const FullWidth: Story = {
     layout: 'padded',
   },
 };
-
-/* ─── Stories: Com ícone ─────────────────────────────────────────────────────── */
 
 const ArrowRightIcon = () => (
   <svg viewBox="0 0 20 20" fill="currentColor">
@@ -212,7 +169,6 @@ const PlusIcon = () => (
   </svg>
 );
 
-/** Com ícone à esquerda. */
 export const WithIconLeft: Story = {
   args: {
     iconLeft: <PlusIcon />,
@@ -220,7 +176,6 @@ export const WithIconLeft: Story = {
   },
 };
 
-/** Com ícone à direita. */
 export const WithIconRight: Story = {
   args: {
     iconRight: <ArrowRightIcon />,
@@ -228,7 +183,6 @@ export const WithIconRight: Story = {
   },
 };
 
-/** Com ícones em ambos os lados. */
 export const WithBothIcons: Story = {
   args: {
     iconLeft: <PlusIcon />,
@@ -237,9 +191,6 @@ export const WithBothIcons: Story = {
   },
 };
 
-/* ─── Stories: Showcase (todas as variantes juntas) ──────────────────────────── */
-
-/** Exibe todas as variantes lado a lado para comparação rápida. */
 export const AllVariants: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
@@ -252,7 +203,6 @@ export const AllVariants: Story = {
   ),
 };
 
-/** Exibe todos os tamanhos lado a lado. */
 export const AllSizes: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>

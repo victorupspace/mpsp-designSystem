@@ -1,7 +1,3 @@
-/* ==========================================================================
-   MPRS Design System — Badge
-   ========================================================================== */
-
 .mprs-badge {
   display: inline-flex;
   align-items: center;
@@ -13,7 +9,6 @@
   white-space: nowrap;
 }
 
-/* Sizes */
 .mprs-badge--sm {
   padding: 2px 8px;
   font-size: var(--mprs-font-size-xs);
@@ -24,7 +19,6 @@
   font-size: var(--mprs-font-size-sm);
 }
 
-/* Variants */
 .mprs-badge--default {
   background-color: var(--mprs-color-neutral-100);
   color: var(--mprs-color-text-secondary);
@@ -55,7 +49,6 @@
   color: var(--mprs-color-feedback-info);
 }
 
-/* Dot */
 .mprs-badge--dot {
   padding: 4px 10px;
 }
@@ -63,6 +56,6 @@
 .mprs-badge__dot {
   width: 6px;
   height: 6px;
-  border-radius: 50%;
+  border-radius: var(--mprs-radius-none);
   background-color: currentColor;
 }

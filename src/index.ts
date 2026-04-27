@@ -1,9 +1,3 @@
-/* ============================================================================
- * MPRS Design System — Public API
- * ============================================================================
- */
-
-// ─── Tokens ──────────────────────────────────────────────────────────────────
 export { default as tokens } from './tokens';
 export {
   colors,
@@ -17,7 +11,6 @@ export {
 } from './tokens';
 export type { DesignTokens } from './tokens';
 
-// ─── Atoms ───────────────────────────────────────────────────────────────────
 export { Button } from './components/atoms/Button';
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/atoms/Button';
 
@@ -35,7 +28,3 @@ export type { TextareaProps, TextareaSize } from './components/atoms/Textarea';
 
 export { Checkbox } from './components/atoms/Checkbox';
 export type { CheckboxProps } from './components/atoms/Checkbox';
-
-// ─── Styles (CSS) ────────────────────────────────────────────────────────────
-// Importar em apps consumidoras: import '@mprs/design-system/styles'
-// Ou: import '@mprs/design-system/src/styles/globals.css'

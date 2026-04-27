@@ -11,36 +11,15 @@ export interface SelectOption {
 }
 
 export interface SelectProps extends Omit<SelectHTMLAttributes<HTMLSelectElement>, 'size'> {
-  /** Label do campo */
   label?: string;
-  /** Texto de ajuda */
   helperText?: string;
-  /** Mensagem de erro */
   errorMessage?: string;
-  /** Tamanho */
   size?: SelectSize;
-  /** Opções do select */
   options: SelectOption[];
-  /** Placeholder (primeira opção desabilitada) */
   placeholder?: string;
-  /** Largura total */
   fullWidth?: boolean;
 }
 
-/**
- * Componente Select/Dropdown do Design System MPRS.
- *
- * ```tsx
- * <Select
- *   label="Comarca"
- *   placeholder="Selecione uma comarca"
- *   options={[
- *     { label: 'Porto Alegre', value: 'poa' },
- *     { label: 'Caxias do Sul', value: 'caxias' },
- *   ]}
- * />
- * ```
- */
 export const Select = forwardRef<HTMLSelectElement, SelectProps>(
   (
     {

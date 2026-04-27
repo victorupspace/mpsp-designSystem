@@ -9,18 +9,9 @@ export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
   children: ReactNode;
   variant?: BadgeVariant;
   size?: BadgeSize;
-  /** Renderiza como ponto/dot sem texto */
   dot?: boolean;
 }
 
-/**
- * Badge / Tag para indicar status, categorias ou contadores.
- *
- * ```tsx
- * <Badge variant="success">Ativo</Badge>
- * <Badge variant="error" dot />
- * ```
- */
 export const Badge: React.FC<BadgeProps> = ({
   children,
   variant = 'default',

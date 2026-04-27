@@ -5,27 +5,14 @@ import './Textarea.css';
 export type TextareaSize = 'sm' | 'md' | 'lg';
 
 export interface TextareaProps extends Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'size'> {
-  /** Label do campo */
   label?: string;
-  /** Texto de ajuda */
   helperText?: string;
-  /** Mensagem de erro */
   errorMessage?: string;
-  /** Tamanho */
   size?: TextareaSize;
-  /** Largura total */
   fullWidth?: boolean;
-  /** Se o usuário pode redimensionar */
   resize?: 'none' | 'vertical' | 'horizontal' | 'both';
 }
 
-/**
- * Campo de texto multilinha do Design System MPRS.
- *
- * ```tsx
- * <Textarea label="Observações" placeholder="Descreva aqui..." rows={4} />
- * ```
- */
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   (
     {

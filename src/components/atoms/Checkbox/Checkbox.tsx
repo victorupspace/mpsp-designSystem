@@ -3,24 +3,12 @@ import type { InputHTMLAttributes } from 'react';
 import './Checkbox.css';
 
 export interface CheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type' | 'size'> {
-  /** Label do checkbox */
   label: string;
-  /** Texto de descrição opcional */
   description?: string;
-  /** Tamanho */
   size?: 'sm' | 'md';
-  /** Estado indeterminado */
   indeterminate?: boolean;
 }
 
-/**
- * Checkbox do Design System MPRS.
- *
- * ```tsx
- * <Checkbox label="Aceito os termos" />
- * <Checkbox label="Selecionar todos" indeterminate />
- * ```
- */
 export const Checkbox: React.FC<CheckboxProps> = ({
   label,
   description,
