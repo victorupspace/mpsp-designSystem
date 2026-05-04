@@ -16,8 +16,14 @@ export type { DesignTokens } from './tokens';
 export { Button } from './components/atoms/Button';
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/atoms/Button';
 
+export { Card } from './components/atoms/Card';
+export type { CardProps } from './components/atoms/Card';
+
 export { Badge } from './components/atoms/Badge';
 export type { BadgeProps, BadgeVariant, BadgeSize } from './components/atoms/Badge';
+
+export { Tag } from './components/atoms/Tag';
+export type { TagProps, TagVariant, TagSize } from './components/atoms/Tag';
 
 export { Input } from './components/atoms/Input';
 export type { InputProps, InputSize, InputState } from './components/atoms/Input';

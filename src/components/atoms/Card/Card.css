@@ -1,0 +1,66 @@
+.mprs-card {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--mprs-space-2);
+  width: 100px;
+  height: 100px;
+  padding: var(--mprs-space-3) var(--mprs-space-2);
+  border: 1px solid var(--mprs-color-border-default);
+  border-radius: 12px;
+  background-color: var(--mprs-color-surface-primary);
+  color: var(--mprs-color-text-primary);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
+  font-family: var(--mprs-font-family-body);
+  text-align: center;
+  transition:
+    border-color var(--mprs-transition-fast),
+    box-shadow var(--mprs-transition-fast),
+    transform var(--mprs-transition-fast);
+}
+
+.mprs-card:hover:not(:disabled) {
+  border-color: var(--mprs-color-border-strong);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.mprs-card:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.mprs-card:focus-visible {
+  outline: 3px solid var(--mprs-color-brand-primary);
+  outline-offset: 2px;
+}
+
+.mprs-card:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.mprs-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  color: currentColor;
+}
+
+.mprs-card__icon svg {
+  width: 42px;
+  height: 42px;
+}
+
+.mprs-card__label {
+  display: block;
+  max-width: 100%;
+  font-family: var(--mprs-font-family-body);
+  font-size: 12px;
+  font-weight: var(--mprs-font-weight-regular);
+  line-height: 1.25;
+  color: currentColor;
+}

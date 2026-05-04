@@ -1,0 +1,40 @@
+.mprs-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-family: var(--mprs-font-family-body);
+  font-weight: var(--mprs-font-weight-extrabold);
+  line-height: var(--mprs-line-height-tight);
+  white-space: nowrap;
+  letter-spacing: 0;
+}
+
+.mprs-tag--sm {
+  min-height: 28px;
+  padding: var(--mprs-space-1) var(--mprs-space-3);
+  font-size: var(--mprs-font-size-sm);
+}
+
+.mprs-tag--md {
+  min-height: 40px;
+  padding: var(--mprs-space-2) var(--mprs-space-4);
+  font-size: var(--mprs-font-size-md);
+}
+
+.mprs-tag--black {
+  background-color: #202832;
+  color: var(--mprs-color-neutral-white);
+}
+
+.mprs-tag--white {
+  background-color: var(--mprs-color-neutral-white);
+  color: var(--mprs-color-neutral-soft-black);
+  border-color: var(--mprs-color-border-default);
+}
+
+.mprs-tag--brand {
+  background-color: var(--mprs-color-brand-primary);
+  color: var(--mprs-color-neutral-white);
+}

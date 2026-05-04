@@ -50,9 +50,11 @@ mprs-design-system/
 │   │   ├── atoms/
 │   │   │   ├── Button/      # Button (.tsx, .css, .stories.tsx)
 │   │   │   ├── Badge/       # Badge (.tsx, .css, .stories.tsx)
+│   │   │   ├── Card/        # Card (.tsx, .css, .stories.tsx)
 │   │   │   ├── Checkbox/    # Checkbox (.tsx, .css, .stories.tsx)
 │   │   │   ├── Input/       # Input (.tsx, .css, .stories.tsx)
 │   │   │   ├── Select/      # Select (.tsx, .css, .stories.tsx)
+│   │   │   ├── Tag/         # Tag (.tsx, .css, .stories.tsx)
 │   │   │   └── Textarea/    # Textarea (.tsx, .css, .stories.tsx)
 │   │
 │   └── index.ts             # Barrel export público
