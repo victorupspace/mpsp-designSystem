@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { shadows } from '../tokens';
+import { colors, shadows } from '../tokens';
 
 const ShadowSample: React.FC<{ name: string; value: string }> = ({ name, value }) => (
   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
@@ -9,16 +9,16 @@ const ShadowSample: React.FC<{ name: string; value: string }> = ({ name, value }
         width: 120,
         height: 80,
         borderRadius: 0,
-        backgroundColor: 'var(--mprs-color-surface-primary, #FFFFFF)',
+        backgroundColor: 'var(--mprs-color-surface-primary)',
         boxShadow: value,
-        border: value === 'none' ? '1px dashed #D4D4D4' : 'none',
+        border: value === 'none' ? `1px dashed ${colors.neutral.gray300}` : 'none',
       }}
     />
     <span
       style={{
         fontSize: 13,
         fontWeight: 600,
-        color: '#1A2332',
+        color: 'var(--mprs-color-text-primary)',
         fontFamily: 'var(--mprs-font-family-body)',
       }}
     >
@@ -27,7 +27,7 @@ const ShadowSample: React.FC<{ name: string; value: string }> = ({ name, value }
     <span
       style={{
         fontSize: 10,
-        color: '#A3A3A3',
+        color: 'var(--mprs-color-text-tertiary)',
         fontFamily: 'var(--mprs-font-family-mono)',
         maxWidth: 160,
         textAlign: 'center',
@@ -46,7 +46,7 @@ const ShadowsPage: React.FC = () => (
       style={{
         fontSize: 32,
         fontWeight: 800,
-        color: '#1A2332',
+        color: 'var(--mprs-color-text-primary)',
         marginBottom: 8,
         fontFamily: 'var(--mprs-font-family-heading)',
       }}
@@ -56,7 +56,7 @@ const ShadowsPage: React.FC = () => (
     <p
       style={{
         fontSize: 16,
-        color: '#737373',
+        color: 'var(--mprs-color-text-tertiary)',
         marginBottom: 40,
         fontFamily: 'var(--mprs-font-family-body)',
         lineHeight: 1.6,

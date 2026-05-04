@@ -2,10 +2,9 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { colors } from '../tokens';
 
-const ColorSwatch: React.FC<{ name: string; value: string; dark?: boolean }> = ({
+const ColorSwatch: React.FC<{ name: string; value: string }> = ({
   name,
   value,
-  dark,
 }) => (
   <div style={{ display: 'flex', flexDirection: 'column', width: 140 }}>
     <div
@@ -23,7 +22,7 @@ const ColorSwatch: React.FC<{ name: string; value: string; dark?: boolean }> = (
       style={{
         fontSize: 13,
         fontWeight: 600,
-        color: '#1A2332',
+        color: 'var(--mprs-color-text-primary)',
         fontFamily: 'var(--mprs-font-family-body)',
         lineHeight: 1.3,
         wordBreak: 'break-all',
@@ -34,7 +33,7 @@ const ColorSwatch: React.FC<{ name: string; value: string; dark?: boolean }> = (
     <span
       style={{
         fontSize: 12,
-        color: '#737373',
+        color: 'var(--mprs-color-text-tertiary)',
         fontFamily: 'var(--mprs-font-family-mono)',
         marginTop: 2,
       }}
@@ -53,10 +52,10 @@ const ColorGroup: React.FC<{ title: string; colors: Record<string, string> }> = 
       style={{
         fontSize: 18,
         fontWeight: 700,
-        color: '#1A2332',
+        color: 'var(--mprs-color-text-primary)',
         marginBottom: 16,
         paddingBottom: 8,
-        borderBottom: '2px solid #E8891C',
+        borderBottom: `2px solid ${colors.brand.primary}`,
         display: 'inline-block',
         fontFamily: 'var(--mprs-font-family-body)',
       }}
@@ -79,7 +78,7 @@ const ColorsPage: React.FC = () => (
       style={{
         fontSize: 32,
         fontWeight: 800,
-        color: '#1A2332',
+        color: 'var(--mprs-color-text-primary)',
         marginBottom: 8,
         fontFamily: 'var(--mprs-font-family-heading)',
       }}
@@ -89,7 +88,7 @@ const ColorsPage: React.FC = () => (
     <p
       style={{
         fontSize: 16,
-        color: '#737373',
+        color: 'var(--mprs-color-text-tertiary)',
         marginBottom: 40,
         fontFamily: 'var(--mprs-font-family-body)',
         lineHeight: 1.6,

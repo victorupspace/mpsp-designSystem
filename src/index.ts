@@ -1,3 +1,5 @@
+import './styles/globals.css';
+
 export { default as tokens } from './tokens';
 export {
   colors,

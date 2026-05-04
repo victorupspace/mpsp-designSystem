@@ -1,26 +1,26 @@
 import { create } from '@storybook/theming/create';
+import { colors, radii, typography } from '../src/tokens';
 
 const brand = {
-  primary: '#FF7000',
-  dark:    '#FF5D00',
-  light:   '#FF8300',
-  subtle:  '#FFF0E5',
+  primary: colors.brand.primary,
+  dark:    colors.brand.primaryDark,
+  light:   colors.brand.primaryLight,
 };
 
 const neutral = {
-  softBlack: '#292929',
-  gray50:    '#FAFAFA',
-  gray100:   '#F5F5F5',
-  gray200:   '#E5E5E5',
-  gray300:   '#D4D4D4',
-  gray500:   '#737373',
-  white:     '#FFFFFF',
+  softBlack: colors.neutral.black,
+  gray50:    colors.neutral.gray50,
+  gray100:   colors.neutral.gray100,
+  gray200:   colors.neutral.gray200,
+  gray300:   colors.neutral.gray300,
+  gray500:   colors.neutral.gray500,
+  white:     colors.neutral.white,
 };
 
 const font = {
-  heading: "'Bitter', Georgia, serif",
-  body:    "'Montserrat', system-ui, sans-serif",
-  mono:    "'JetBrains Mono', 'Fira Code', Consolas, monospace",
+  heading: typography.fontFamily.heading,
+  body:    typography.fontFamily.body,
+  mono:    typography.fontFamily.mono,
 };
 
 export const mprsThemeLight = create({
@@ -38,7 +38,7 @@ export const mprsThemeLight = create({
   appContentBg:    neutral.white,
   appPreviewBg:    neutral.white,
   appBorderColor:  neutral.gray200,
-  appBorderRadius: 0,
+  appBorderRadius: Number.parseInt(radii.md, 10),
 
   fontBase: font.body,
   fontCode: font.mono,
@@ -55,7 +55,7 @@ export const mprsThemeLight = create({
   inputBg:           neutral.white,
   inputBorder:       neutral.gray300,
   inputTextColor:    neutral.softBlack,
-  inputBorderRadius: 0,
+  inputBorderRadius: Number.parseInt(radii.md, 10),
 
   booleanBg:         neutral.gray100,
   booleanSelectedBg: brand.primary,
@@ -72,29 +72,29 @@ export const mprsThemeDark = create({
   colorPrimary:   brand.light,
   colorSecondary: brand.primary,
 
-  appBg:           '#0F1219',
-  appContentBg:    '#1A2332',
-  appPreviewBg:    '#1A2332',
-  appBorderColor:  '#2D3B4E',
-  appBorderRadius: 0,
+  appBg:           colors.dark.surface.primary,
+  appContentBg:    colors.dark.surface.secondary,
+  appPreviewBg:    colors.dark.surface.secondary,
+  appBorderColor:  colors.dark.border.default,
+  appBorderRadius: Number.parseInt(radii.md, 10),
 
   fontBase: font.body,
   fontCode: font.mono,
 
   textColor:        neutral.gray100,
-  textInverseColor: '#1A2332',
+  textInverseColor: colors.dark.surface.secondary,
   textMutedColor:   neutral.gray500,
 
   barTextColor:     neutral.gray500,
   barSelectedColor: brand.light,
   barHoverColor:    brand.primary,
-  barBg:            '#0F1219',
+  barBg:            colors.dark.surface.primary,
 
-  inputBg:           '#243044',
-  inputBorder:       '#3D4F65',
+  inputBg:           colors.dark.surface.tertiary,
+  inputBorder:       colors.dark.border.strong,
   inputTextColor:    neutral.gray100,
-  inputBorderRadius: 0,
+  inputBorderRadius: Number.parseInt(radii.md, 10),
 
-  booleanBg:         '#243044',
+  booleanBg:         colors.dark.surface.tertiary,
   booleanSelectedBg: brand.primary,
 });

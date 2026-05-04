@@ -11,12 +11,12 @@
 -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" fill="none">
   <rect x="0" y="4" width="40" height="40" rx="6" fill="url(#grad)" />
-  <text x="52" y="28" fill="#1A2332" font-family="Source Sans 3, sans-serif" font-size="24" font-weight="800">MPRS</text>
-  <text x="52" y="44" fill="#737373" font-family="Source Sans 3, sans-serif" font-size="10">Design System</text>
+  <text x="52" y="28" fill="#292929" font-family="Montserrat, sans-serif" font-size="24" font-weight="800">MPRS</text>
+  <text x="52" y="44" fill="#737373" font-family="Montserrat, sans-serif" font-size="10">Design System</text>
   <defs>
     <linearGradient id="grad" x1="20" y1="4" x2="20" y2="44" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#E8891C"/>
-      <stop offset="1" stop-color="#D4A023"/>
+      <stop stop-color="#FF7000"/>
+      <stop offset="1" stop-color="#FF9700"/>
     </linearGradient>
   </defs>
 </svg>

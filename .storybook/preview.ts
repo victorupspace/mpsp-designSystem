@@ -1,6 +1,7 @@
 import type { Preview } from '@storybook/react';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
-import { mprsThemeLight, mprsThemeDark } from './mprs-theme';
+import { mprsThemeLight } from './mprs-theme';
+import { colors } from '../src/tokens';
 
 import '../src/styles/globals.css';
 
@@ -29,10 +30,10 @@ const preview: Preview = {
     backgrounds: {
       default: 'Claro',
       values: [
-        { name: 'Claro', value: '#FFFFFF' },
-        { name: 'Cinza', value: '#FAFAFA' },
-        { name: 'Escuro', value: '#1A2332' },
-        { name: 'Brand', value: '#E8891C' },
+        { name: 'Claro', value: colors.neutral.white },
+        { name: 'Cinza', value: colors.neutral.gray50 },
+        { name: 'Escuro', value: colors.dark.surface.secondary },
+        { name: 'Brand', value: colors.brand.primary },
       ],
     },
 

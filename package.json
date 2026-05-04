@@ -4,36 +4,59 @@
   "description": "Design System do Ministério Público do Rio Grande do Sul",
   "private": true,
   "type": "module",
+  "main": "./dist/mprs-ds.cjs",
+  "module": "./dist/mprs-ds.es.js",
+  "types": "./dist/index.d.ts",
+  "style": "./dist/styles.css",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/mprs-ds.es.js",
+      "require": "./dist/mprs-ds.cjs"
+    },
+    "./styles.css": "./dist/styles.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && vite build && tsc -p tsconfig.build.json",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint .",
     "preview": "vite preview"
   },
-  "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
-  "overrides": {
-    "@storybook/test": "8.6.18"
+  "peerDependencies": {
+    "react": ">=18 <20",
+    "react-dom": ">=18 <20"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^8.4.7",
-    "@storybook/addon-interactions": "^8.4.7",
-    "@storybook/addon-links": "^8.4.7",
-    "@storybook/addon-themes": "^8.4.7",
-    "@storybook/blocks": "^8.4.7",
-    "@storybook/react": "^8.4.7",
-    "@storybook/react-vite": "^8.4.7",
-    "@storybook/theming": "^8.4.7",
-    "@storybook/manager-api": "^8.4.7",
+    "@eslint/js": "^10.0.1",
+    "@storybook/addon-essentials": "8.6.18",
+    "@storybook/addon-interactions": "8.6.18",
+    "@storybook/addon-links": "8.6.18",
+    "@storybook/addon-themes": "8.6.18",
+    "@storybook/blocks": "8.6.18",
+    "@storybook/manager-api": "8.6.18",
+    "@storybook/react": "8.6.18",
+    "@storybook/react-vite": "8.6.18",
+    "@storybook/theming": "8.6.18",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.4",
-    "storybook": "^8.4.7",
+    "eslint": "^10.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "storybook": "8.6.18",
     "typescript": "^5.6.3",
+    "typescript-eslint": "^8.59.1",
     "vite": "^6.0.3"
   }
 }

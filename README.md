@@ -50,9 +50,10 @@ mprs-design-system/
 │   │   ├── atoms/
 │   │   │   ├── Button/      # Button (.tsx, .css, .stories.tsx)
 │   │   │   ├── Badge/       # Badge (.tsx, .css, .stories.tsx)
-│   │   │   └── Input/       # Input (.tsx, .css, .stories.tsx)
-│   │   ├── molecules/       # (vazio — pronto para expandir)
-│   │   └── organisms/       # (vazio — pronto para expandir)
+│   │   │   ├── Checkbox/    # Checkbox (.tsx, .css, .stories.tsx)
+│   │   │   ├── Input/       # Input (.tsx, .css, .stories.tsx)
+│   │   │   ├── Select/      # Select (.tsx, .css, .stories.tsx)
+│   │   │   └── Textarea/    # Textarea (.tsx, .css, .stories.tsx)
 │   │
 │   └── index.ts             # Barrel export público
 │
@@ -150,12 +151,31 @@ Não esqueça de exportar em `src/index.ts`.
 ## 📦 Build
 
 ```bash
+# Typecheck
+npm run typecheck
+
+# Lint
+npm run lint
+
 # Build da biblioteca
 npm run build
 
 # Build do Storybook estático
 npm run build-storybook
 ```
+
+## Uso em aplicações
+
+```tsx
+import { Button } from '@mprs/design-system';
+import '@mprs/design-system/styles.css';
+
+export function Example() {
+  return <Button>Confirmar</Button>;
+}
+```
+
+O pacote exporta React e React DOM como `peerDependencies`; a aplicação consumidora deve fornecer essas dependências.
 
 ---
 
@@ -170,6 +190,6 @@ npm run build-storybook
 
 ## 📝 Notas
 
-- **Fontes**: Atualmente usando Source Sans 3. Verifique no Figma se a fonte oficial é diferente e atualize em `globals.css` e `mprs-theme.ts`.
+- **Fontes**: Atualmente usando Bitter para títulos e Montserrat para corpo, com Karla e Syne disponíveis nos tokens.
 - **Permissões do Figma**: Para sincronizar tokens automaticamente via MCP, o arquivo precisa estar com permissão "Anyone with the link can view".
 - **Dark Mode**: O toggle Light/Dark está disponível na toolbar do Storybook.

@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { typography } from '../tokens';
+import { colors, typography } from '../tokens';
 
 const TypeSample: React.FC<{
   name: string;
@@ -14,7 +14,7 @@ const TypeSample: React.FC<{
       alignItems: 'baseline',
       gap: 24,
       padding: '16px 0',
-      borderBottom: '1px solid #E5E5E5',
+      borderBottom: `1px solid ${colors.neutral.gray200}`,
     }}
   >
     <div style={{ minWidth: 100 }}>
@@ -22,14 +22,14 @@ const TypeSample: React.FC<{
         style={{
           fontSize: 12,
           fontWeight: 600,
-          color: '#E8891C',
+          color: 'var(--mprs-color-brand-primary)',
           fontFamily: 'var(--mprs-font-family-mono)',
         }}
       >
         {name}
       </span>
       <br />
-      <span style={{ fontSize: 11, color: '#A3A3A3', fontFamily: 'var(--mprs-font-family-mono)' }}>
+      <span style={{ fontSize: 11, color: 'var(--mprs-color-text-tertiary)', fontFamily: 'var(--mprs-font-family-mono)' }}>
         {size}
       </span>
     </div>
@@ -38,7 +38,7 @@ const TypeSample: React.FC<{
         fontSize: size,
         fontWeight: weight,
         fontFamily: font || 'var(--mprs-font-family-body)',
-        color: '#1A2332',
+        color: 'var(--mprs-color-text-primary)',
         lineHeight: 1.3,
       }}
     >
@@ -54,13 +54,13 @@ const WeightSample: React.FC<{ name: string; weight: number }> = ({ name, weight
       alignItems: 'center',
       gap: 24,
       padding: '12px 0',
-      borderBottom: '1px solid #F5F5F5',
+      borderBottom: `1px solid ${colors.neutral.gray100}`,
     }}
   >
     <div style={{ minWidth: 120 }}>
-      <span style={{ fontSize: 13, fontWeight: 600, color: '#1A2332' }}>{name}</span>
+      <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--mprs-color-text-primary)' }}>{name}</span>
       <br />
-      <span style={{ fontSize: 12, color: '#A3A3A3', fontFamily: 'var(--mprs-font-family-mono)' }}>
+      <span style={{ fontSize: 12, color: 'var(--mprs-color-text-tertiary)', fontFamily: 'var(--mprs-font-family-mono)' }}>
         {weight}
       </span>
     </div>
@@ -69,7 +69,7 @@ const WeightSample: React.FC<{ name: string; weight: number }> = ({ name, weight
         fontSize: 20,
         fontWeight: weight,
         fontFamily: 'var(--mprs-font-family-body)',
-        color: '#1A2332',
+        color: 'var(--mprs-color-text-primary)',
       }}
     >
       AaBbCcDdEeFf 0123456789
@@ -83,7 +83,7 @@ const TypographyPage: React.FC = () => (
       style={{
         fontSize: 32,
         fontWeight: 800,
-        color: '#1A2332',
+        color: 'var(--mprs-color-text-primary)',
         marginBottom: 8,
         fontFamily: 'var(--mprs-font-family-heading)',
       }}
@@ -93,7 +93,7 @@ const TypographyPage: React.FC = () => (
     <p
       style={{
         fontSize: 16,
-        color: '#737373',
+        color: 'var(--mprs-color-text-tertiary)',
         marginBottom: 40,
         fontFamily: 'var(--mprs-font-family-body)',
         lineHeight: 1.6,
@@ -103,7 +103,7 @@ const TypographyPage: React.FC = () => (
       <code>--mprs-font-*</code>) e tokens TypeScript.
     </p>
 
-    <h2 style={{ fontSize: 20, fontWeight: 700, color: '#1A2332', marginBottom: 16 }}>
+    <h2 style={{ fontSize: 20, fontWeight: 700, color: 'var(--mprs-color-text-primary)', marginBottom: 16 }}>
       Famílias Tipográficas
     </h2>
     <div style={{ marginBottom: 40, display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -113,7 +113,7 @@ const TypographyPage: React.FC = () => (
           style={{
             padding: 16,
             borderRadius: 0,
-            border: '1px solid #E5E5E5',
+            border: `1px solid ${colors.neutral.gray200}`,
             display: 'flex',
             alignItems: 'center',
             gap: 16,
@@ -123,7 +123,7 @@ const TypographyPage: React.FC = () => (
             style={{
               fontSize: 12,
               fontWeight: 700,
-              color: '#E8891C',
+              color: 'var(--mprs-color-brand-primary)',
               fontFamily: 'var(--mprs-font-family-mono)',
               minWidth: 80,
               textTransform: 'uppercase',
@@ -131,14 +131,14 @@ const TypographyPage: React.FC = () => (
           >
             {key}
           </span>
-          <span style={{ fontFamily: val, fontSize: 18, color: '#1A2332' }}>
+          <span style={{ fontFamily: val, fontSize: 18, color: 'var(--mprs-color-text-primary)' }}>
             MPRS — Design System 0123456789
           </span>
         </div>
       ))}
     </div>
 
-    <h2 style={{ fontSize: 20, fontWeight: 700, color: '#1A2332', marginBottom: 16 }}>
+    <h2 style={{ fontSize: 20, fontWeight: 700, color: 'var(--mprs-color-text-primary)', marginBottom: 16 }}>
       Escala de Tamanho
     </h2>
     <div style={{ marginBottom: 40 }}>
@@ -147,7 +147,7 @@ const TypographyPage: React.FC = () => (
       ))}
     </div>
 
-    <h2 style={{ fontSize: 20, fontWeight: 700, color: '#1A2332', marginBottom: 16 }}>Pesos</h2>
+    <h2 style={{ fontSize: 20, fontWeight: 700, color: 'var(--mprs-color-text-primary)', marginBottom: 16 }}>Pesos</h2>
     <div style={{ marginBottom: 40 }}>
       {Object.entries(typography.fontWeight).map(([key, val]) => (
         <WeightSample key={key} name={key} weight={val} />

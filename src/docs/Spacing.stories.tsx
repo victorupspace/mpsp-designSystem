@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { spacing, radii } from '../tokens';
+import { colors, spacing, radii } from '../tokens';
 
 const SpacingBar: React.FC<{ name: string; value: string }> = ({ name, value }) => (
   <div
@@ -16,7 +16,7 @@ const SpacingBar: React.FC<{ name: string; value: string }> = ({ name, value }) 
         minWidth: 60,
         fontSize: 13,
         fontWeight: 600,
-        color: '#E8891C',
+        color: 'var(--mprs-color-brand-primary)',
         fontFamily: 'var(--mprs-font-family-mono)',
         textAlign: 'right',
       }}
@@ -27,7 +27,7 @@ const SpacingBar: React.FC<{ name: string; value: string }> = ({ name, value }) 
       style={{
         minWidth: 80,
         fontSize: 12,
-        color: '#A3A3A3',
+        color: 'var(--mprs-color-text-tertiary)',
         fontFamily: 'var(--mprs-font-family-mono)',
       }}
     >
@@ -38,7 +38,7 @@ const SpacingBar: React.FC<{ name: string; value: string }> = ({ name, value }) 
         width: value,
         height: 24,
         borderRadius: 0,
-        background: 'linear-gradient(135deg, #E8891C 0%, #D4A023 100%)',
+        background: colors.brand.gradient,
         minWidth: value === '0' ? 2 : undefined,
         opacity: value === '0' ? 0.3 : 1,
       }}
@@ -52,13 +52,13 @@ const RadiusSample: React.FC<{ name: string; value: string }> = ({ name, value }
       style={{
         width: 64,
         height: 64,
-        backgroundColor: '#FFF7ED',
-        border: '2px solid #E8891C',
+        backgroundColor: 'var(--mprs-color-surface-brand-subtle)',
+        border: `2px solid ${colors.brand.primary}`,
         borderRadius: value,
       }}
     />
-    <span style={{ fontSize: 12, fontWeight: 600, color: '#1A2332' }}>{name}</span>
-    <span style={{ fontSize: 11, color: '#A3A3A3', fontFamily: 'var(--mprs-font-family-mono)' }}>
+    <span style={{ fontSize: 12, fontWeight: 600, color: 'var(--mprs-color-text-primary)' }}>{name}</span>
+    <span style={{ fontSize: 11, color: 'var(--mprs-color-text-tertiary)', fontFamily: 'var(--mprs-font-family-mono)' }}>
       {value}
     </span>
   </div>
@@ -70,7 +70,7 @@ const SpacingPage: React.FC = () => (
       style={{
         fontSize: 32,
         fontWeight: 800,
-        color: '#1A2332',
+        color: 'var(--mprs-color-text-primary)',
         marginBottom: 8,
         fontFamily: 'var(--mprs-font-family-heading)',
       }}
@@ -80,7 +80,7 @@ const SpacingPage: React.FC = () => (
     <p
       style={{
         fontSize: 16,
-        color: '#737373',
+        color: 'var(--mprs-color-text-tertiary)',
         marginBottom: 40,
         fontFamily: 'var(--mprs-font-family-body)',
         lineHeight: 1.6,
@@ -90,18 +90,16 @@ const SpacingPage: React.FC = () => (
       Use <code>--mprs-space-*</code> e <code>--mprs-radius-*</code>.
     </p>
 
-    <h2 style={{ fontSize: 20, fontWeight: 700, color: '#1A2332', marginBottom: 16 }}>
+    <h2 style={{ fontSize: 20, fontWeight: 700, color: 'var(--mprs-color-text-primary)', marginBottom: 16 }}>
       Escala de Espaçamento
     </h2>
     <div style={{ marginBottom: 48 }}>
-      {Object.entries(spacing)
-        .filter(([, val]) => val !== '1px')
-        .map(([key, val]) => (
-          <SpacingBar key={key} name={key} value={val} />
-        ))}
+      {Object.entries(spacing).map(([key, val]) => (
+        <SpacingBar key={key} name={key} value={val} />
+      ))}
     </div>
 
-    <h2 style={{ fontSize: 20, fontWeight: 700, color: '#1A2332', marginBottom: 16 }}>
+    <h2 style={{ fontSize: 20, fontWeight: 700, color: 'var(--mprs-color-text-primary)', marginBottom: 16 }}>
       Border Radius
     </h2>
     <div

@@ -16,7 +16,8 @@ export default defineConfig({
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'MPRSDesignSystem',
       formats: ['es', 'cjs'],
-      fileName: (format) => `mprs-ds.${format}.js`,
+      fileName: (format) => (format === 'es' ? 'mprs-ds.es.js' : 'mprs-ds.cjs'),
+      cssFileName: 'styles',
     },
     rollupOptions: {
       external: ['react', 'react-dom'],

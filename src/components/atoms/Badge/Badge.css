@@ -2,7 +2,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--mprs-space-1);
-  border-radius: var(--mprs-radius-full);
+  border-radius: 9999px;
   font-family: var(--mprs-font-family-body);
   font-weight: var(--mprs-font-weight-medium);
   line-height: 1;
@@ -56,6 +56,6 @@
 .mprs-badge__dot {
   width: 6px;
   height: 6px;
-  border-radius: var(--mprs-radius-none);
+  border-radius: 9999px;
   background-color: currentColor;
 }
