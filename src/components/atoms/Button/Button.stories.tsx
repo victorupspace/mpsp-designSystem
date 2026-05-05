@@ -1,6 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import type { CSSProperties } from 'react';
 import { fn } from '@storybook/test';
 import { Button } from './Button';
+
+const storyStackStyle: CSSProperties = {
+  display: 'grid',
+  gap: '32px',
+  justifyItems: 'start',
+};
+
+const storyRowStyle: CSSProperties = {
+  display: 'flex',
+  gap: '24px',
+  flexWrap: 'wrap',
+  alignItems: 'center',
+};
 
 const meta: Meta<typeof Button> = {
   title: 'Componentes/Atoms/Button',
@@ -73,17 +87,45 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
+const ArrowRightIcon = () => (
+  <svg viewBox="0 0 20 20" fill="currentColor">
+    <path
+      fillRule="evenodd"
+      d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
+
+const ArrowLeftIcon = () => (
+  <svg viewBox="0 0 20 20" fill="currentColor">
+    <path
+      fillRule="evenodd"
+      d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
+
+const PlusIcon = () => (
+  <svg viewBox="0 0 20 20" fill="currentColor">
+    <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
+  </svg>
+);
+
 export const Primary: Story = {
   args: {
     variant: 'primary',
-    children: 'Confirmar',
+    iconRight: <ArrowRightIcon />,
+    children: 'Label',
   },
 };
 
 export const Secondary: Story = {
   args: {
     variant: 'secondary',
-    children: 'Detalhes',
+    iconRight: <ArrowRightIcon />,
+    children: 'Label',
   },
 };
 
@@ -153,22 +195,6 @@ export const FullWidth: Story = {
   },
 };
 
-const ArrowRightIcon = () => (
-  <svg viewBox="0 0 20 20" fill="currentColor">
-    <path
-      fillRule="evenodd"
-      d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
-      clipRule="evenodd"
-    />
-  </svg>
-);
-
-const PlusIcon = () => (
-  <svg viewBox="0 0 20 20" fill="currentColor">
-    <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
-  </svg>
-);
-
 export const WithIconLeft: Story = {
   args: {
     iconLeft: <PlusIcon />,
@@ -191,9 +217,71 @@ export const WithBothIcons: Story = {
   },
 };
 
+export const PrimaryVariations: Story = {
+  name: 'Variações primárias',
+  render: () => (
+    <div style={storyStackStyle}>
+      <Button variant="primary" iconRight={<ArrowRightIcon />}>Label</Button>
+      <Button variant="primary" iconLeft={<ArrowLeftIcon />}>Label</Button>
+      <Button variant="primary">Label</Button>
+    </div>
+  ),
+};
+
+export const PrimaryStates: Story = {
+  name: 'Estados primários',
+  render: () => (
+    <div style={storyStackStyle}>
+      <div style={storyRowStyle}>
+        <Button variant="primary" iconRight={<ArrowRightIcon />}>Label</Button>
+        <Button variant="primary" iconLeft={<ArrowLeftIcon />}>Label</Button>
+        <Button variant="primary">Label</Button>
+      </div>
+      <div style={storyRowStyle}>
+        <Button
+          variant="primary"
+          iconRight={<ArrowRightIcon />}
+          style={{ '--mprs-btn-bg': '#0F181D', '--mprs-btn-border': '#0F181D' } as CSSProperties}
+        >
+          Label
+        </Button>
+        <Button
+          variant="primary"
+          iconLeft={<ArrowLeftIcon />}
+          style={{ '--mprs-btn-bg': '#0F181D', '--mprs-btn-border': '#0F181D' } as CSSProperties}
+        >
+          Label
+        </Button>
+        <Button
+          variant="primary"
+          style={{ '--mprs-btn-bg': '#0F181D', '--mprs-btn-border': '#0F181D' } as CSSProperties}
+        >
+          Label
+        </Button>
+      </div>
+      <div style={storyRowStyle}>
+        <Button variant="primary" iconRight={<ArrowRightIcon />} disabled>Label</Button>
+        <Button variant="primary" iconLeft={<ArrowLeftIcon />} disabled>Label</Button>
+        <Button variant="primary" disabled>Label</Button>
+      </div>
+    </div>
+  ),
+};
+
+export const SecondaryVariations: Story = {
+  name: 'Variações secundárias',
+  render: () => (
+    <div style={storyStackStyle}>
+      <Button variant="secondary" iconRight={<ArrowRightIcon />}>Label</Button>
+      <Button variant="secondary" iconLeft={<ArrowLeftIcon />}>Label</Button>
+      <Button variant="secondary">Label</Button>
+    </div>
+  ),
+};
+
 export const AllVariants: Story = {
   render: () => (
-    <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+    <div style={storyRowStyle}>
       <Button variant="primary">Primary</Button>
       <Button variant="secondary">Secondary</Button>
       <Button variant="outline">Outline</Button>

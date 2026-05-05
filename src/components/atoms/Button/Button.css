@@ -1,13 +1,28 @@
 .mprs-btn {
+  --mprs-btn-bg: transparent;
+  --mprs-btn-bg-hover: var(--mprs-btn-bg);
+  --mprs-btn-bg-active: var(--mprs-btn-bg-hover);
+  --mprs-btn-bg-disabled: var(--mprs-btn-bg);
+  --mprs-btn-border: transparent;
+  --mprs-btn-border-hover: var(--mprs-btn-border);
+  --mprs-btn-border-active: var(--mprs-btn-border-hover);
+  --mprs-btn-border-disabled: var(--mprs-btn-border);
+  --mprs-btn-color: currentColor;
+  --mprs-btn-color-disabled: var(--mprs-btn-color);
+  --mprs-btn-shadow-hover: none;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--mprs-space-2);
+  gap: var(--mprs-space-4);
   border: 2px solid transparent;
   border-radius: var(--mprs-radius-default);
   font-family: var(--mprs-font-family-body);
-  font-weight: var(--mprs-font-weight-semibold);
+  font-weight: var(--mprs-font-weight-regular);
   line-height: var(--mprs-line-height-tight);
+  background-color: var(--mprs-btn-bg);
+  color: var(--mprs-btn-color);
+  border-color: var(--mprs-btn-border);
   cursor: pointer;
   text-decoration: none;
   white-space: nowrap;
@@ -21,35 +36,48 @@
 }
 
 .mprs-btn:focus-visible {
-  outline: 3px solid var(--mprs-color-brand-primary);
+  outline: 3px solid var(--mprs-color-neutral-900);
   outline-offset: 2px;
 }
 
+.mprs-btn:hover:not(:disabled) {
+  background-color: var(--mprs-btn-bg-hover);
+  border-color: var(--mprs-btn-border-hover);
+  box-shadow: var(--mprs-btn-shadow-hover);
+}
+
 .mprs-btn:active:not(:disabled) {
+  background-color: var(--mprs-btn-bg-active);
+  border-color: var(--mprs-btn-border-active);
   transform: scale(0.97);
 }
 
 .mprs-btn:disabled {
+  background-color: var(--mprs-btn-bg-disabled);
+  border-color: var(--mprs-btn-border-disabled);
+  color: var(--mprs-btn-color-disabled);
   cursor: not-allowed;
-  opacity: 0.5;
 }
 
 .mprs-btn--sm {
-  padding: var(--mprs-space-1) var(--mprs-space-3);
-  font-size: var(--mprs-font-size-sm);
-  min-height: 32px;
+  min-width: 180px;
+  min-height: 52px;
+  padding: var(--mprs-space-3) var(--mprs-space-6);
+  font-size: var(--mprs-font-size-lg);
 }
 
 .mprs-btn--md {
-  padding: var(--mprs-space-2) var(--mprs-space-5);
-  font-size: var(--mprs-font-size-base);
-  min-height: 40px;
+  min-width: 278px;
+  min-height: 80px;
+  padding: var(--mprs-space-4) var(--mprs-space-8);
+  font-size: var(--mprs-font-size-5xl);
 }
 
 .mprs-btn--lg {
-  padding: var(--mprs-space-3) var(--mprs-space-6);
-  font-size: var(--mprs-font-size-md);
-  min-height: 48px;
+  min-width: 320px;
+  min-height: 96px;
+  padding: var(--mprs-space-5) var(--mprs-space-10);
+  font-size: var(--mprs-font-size-6xl);
 }
 
 .mprs-btn--full {
@@ -57,78 +85,65 @@
 }
 
 .mprs-btn--primary {
-  background-color: var(--mprs-color-brand-primary);
-  color: var(--mprs-color-text-inverse);
-  border-color: var(--mprs-color-brand-primary);
-}
-
-.mprs-btn--primary:hover:not(:disabled) {
-  background-color: var(--mprs-color-brand-primary-dark);
-  border-color: var(--mprs-color-brand-primary-dark);
-  box-shadow: var(--mprs-shadow-brand);
-}
-
-.mprs-btn--primary:active:not(:disabled) {
-  background-color: var(--mprs-color-brand-primary-deeper);
+  --mprs-btn-bg: var(--mprs-color-neutral-600);
+  --mprs-btn-bg-hover: #0F181D;
+  --mprs-btn-bg-active: var(--mprs-color-neutral-900);
+  --mprs-btn-bg-disabled: var(--mprs-color-neutral-500);
+  --mprs-btn-border: var(--mprs-btn-bg);
+  --mprs-btn-border-hover: var(--mprs-btn-bg-hover);
+  --mprs-btn-border-active: var(--mprs-btn-bg-active);
+  --mprs-btn-border-disabled: var(--mprs-btn-bg-disabled);
+  --mprs-btn-color: var(--mprs-color-text-inverse);
+  --mprs-btn-color-disabled: var(--mprs-color-text-inverse);
 }
 
 .mprs-btn--secondary {
-  background-color: var(--mprs-color-surface-brand-subtle);
-  color: var(--mprs-color-brand-primary-dark);
-  border-color: var(--mprs-color-surface-brand-subtle);
-}
-
-.mprs-btn--secondary:hover:not(:disabled) {
-  background-color: var(--mprs-color-surface-brand-hover);
-  border-color: var(--mprs-color-surface-brand-hover);
-}
-
-.mprs-btn--secondary:active:not(:disabled) {
-  background-color: var(--mprs-color-surface-brand-active);
+  --mprs-btn-bg: var(--mprs-color-brand-primary);
+  --mprs-btn-bg-hover: var(--mprs-color-brand-primary-dark);
+  --mprs-btn-bg-active: var(--mprs-color-brand-primary-deeper);
+  --mprs-btn-bg-disabled: var(--mprs-bg-brand-disabled);
+  --mprs-btn-border: var(--mprs-btn-bg);
+  --mprs-btn-border-hover: var(--mprs-btn-bg-hover);
+  --mprs-btn-border-active: var(--mprs-btn-bg-active);
+  --mprs-btn-border-disabled: var(--mprs-btn-bg-disabled);
+  --mprs-btn-color: var(--mprs-color-text-inverse);
+  --mprs-btn-color-disabled: var(--mprs-color-text-inverse);
+  --mprs-btn-shadow-hover: var(--mprs-shadow-brand);
 }
 
 .mprs-btn--outline {
-  background-color: transparent;
-  color: var(--mprs-color-brand-primary);
-  border-color: var(--mprs-color-brand-primary);
-}
-
-.mprs-btn--outline:hover:not(:disabled) {
-  background-color: var(--mprs-color-surface-brand-subtle);
-}
-
-.mprs-btn--outline:active:not(:disabled) {
-  background-color: var(--mprs-color-surface-brand-hover);
+  --mprs-btn-bg: transparent;
+  --mprs-btn-bg-hover: var(--mprs-color-surface-brand-subtle);
+  --mprs-btn-bg-active: var(--mprs-color-surface-brand-hover);
+  --mprs-btn-bg-disabled: transparent;
+  --mprs-btn-border: var(--mprs-color-brand-primary);
+  --mprs-btn-border-disabled: var(--mprs-color-neutral-400);
+  --mprs-btn-color: var(--mprs-color-brand-primary);
+  --mprs-btn-color-disabled: var(--mprs-color-text-disabled);
 }
 
 .mprs-btn--ghost {
-  background-color: transparent;
-  color: var(--mprs-color-text-primary);
-  border-color: transparent;
-}
-
-.mprs-btn--ghost:hover:not(:disabled) {
-  background-color: var(--mprs-color-neutral-100);
-}
-
-.mprs-btn--ghost:active:not(:disabled) {
-  background-color: var(--mprs-color-neutral-200);
+  --mprs-btn-bg: transparent;
+  --mprs-btn-bg-hover: var(--mprs-color-neutral-100);
+  --mprs-btn-bg-active: var(--mprs-color-neutral-200);
+  --mprs-btn-bg-disabled: transparent;
+  --mprs-btn-border: transparent;
+  --mprs-btn-color: var(--mprs-color-text-primary);
+  --mprs-btn-color-disabled: var(--mprs-color-text-disabled);
 }
 
 .mprs-btn--danger {
-  background-color: var(--mprs-color-feedback-error);
-  color: var(--mprs-color-text-inverse);
-  border-color: var(--mprs-color-feedback-error);
-}
-
-.mprs-btn--danger:hover:not(:disabled) {
-  background-color: var(--mprs-color-feedback-error-dark);
-  border-color: var(--mprs-color-feedback-error-dark);
-  box-shadow: 0 4px 14px 0 var(--mprs-focus-ring-error);
-}
-
-.mprs-btn--danger:active:not(:disabled) {
-  background-color: var(--mprs-color-feedback-error-darker);
+  --mprs-btn-bg: var(--mprs-color-feedback-error);
+  --mprs-btn-bg-hover: var(--mprs-color-feedback-error-dark);
+  --mprs-btn-bg-active: var(--mprs-color-feedback-error-darker);
+  --mprs-btn-bg-disabled: var(--mprs-color-neutral-500);
+  --mprs-btn-border: var(--mprs-btn-bg);
+  --mprs-btn-border-hover: var(--mprs-btn-bg-hover);
+  --mprs-btn-border-active: var(--mprs-btn-bg-active);
+  --mprs-btn-border-disabled: var(--mprs-btn-bg-disabled);
+  --mprs-btn-color: var(--mprs-color-text-inverse);
+  --mprs-btn-color-disabled: var(--mprs-color-text-inverse);
+  --mprs-btn-shadow-hover: 0 4px 14px 0 var(--mprs-focus-ring-error);
 }
 
 .mprs-btn--loading {
